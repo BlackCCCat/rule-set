@@ -90,7 +90,7 @@ jobs:
 
           for file in custom/*.list custom/domain/*.list; do
               [[ -f "$file" ]] || continue
-              record_sources "$file" "https://github.com/QuixoticHeart/rule-set/tree/master/${file#./}"
+              record_sources "$file" "https://github.com/BlackCCCat/rule-set/tree/master/${file#./}"
           done
 
           ipcidr_lists=('facebook' 'telegram' 'twitter' 'google' 'netflix' 'private')
@@ -289,7 +289,7 @@ jobs:
           cp 'download/special/cn-cidr.list' 'meta/cncidr.list'
           cp 'download/special/cn-cidr.list.sources' 'meta/cncidr.list.sources'
           cp 'custom/apns.list' 'meta/apns.list'
-          record_sources 'meta/apns.list' 'https://github.com/QuixoticHeart/rule-set/tree/master/custom/apns.list'
+          record_sources 'meta/apns.list' 'https://github.com/BlackCCCat/rule-set/tree/master/custom/apns.list'
           cp 'download/special/ChinaDNS.list' 'meta/ChinaDNS.list'
           cp 'download/special/ChinaDNS.list.sources' 'meta/ChinaDNS.list.sources'
           cp 'download/special/DNS.list' 'meta/DNS.list'

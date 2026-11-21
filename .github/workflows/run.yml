@@ -203,9 +203,9 @@ jobs:
               'ngosang-trackers.list https://github.com/ngosang/trackerslist/raw/refs/heads/master/trackers_all.txt'
               'fake-ip-filter-sc.list https://github.com/juewuy/ShellCrash/raw/refs/heads/dev/public/fake_ip_filter.list'
               'fake-ip-filter-oc.list https://github.com/vernesong/OpenClash/raw/refs/heads/master/luci-app-openclash/root/etc/openclash/custom/openclash_custom_fake_filter.list'
-              'ChinaDNS.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ChinaDNS.list'
-              'DNS.list https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DNS.list'
-              'Apple_Update.list https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/apple_update.list'
+              'dns-cn.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ChinaDNS.list'
+              'dns.list https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DNS.list'
+              'apple_update.list https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/apple_update.list'
               'telegram-rules.list https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/non_ip/telegram.conf'
               'telegram-ip-rules.list https://ruleset.skk.moe/List/ip/telegram.conf'
               'telegram-asn.list https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/ip/telegram_asn.conf'
@@ -294,7 +294,7 @@ jobs:
               mail_source_files+=("$mail_sources_dir/${list}.list")
           done
 
-          : > 'download/special/Mail.list'
+          : > 'download/special/mail.list'
           for file in "${mail_source_files[@]}"; do
               awk -F, '
                   NF < 2 { next }
@@ -302,9 +302,9 @@ jobs:
                       value = tolower($2)
                       if (value !~ /(^|[.-])mail-ads([.-]|$)/ && (value ~ /(^|[.-])(imap|smtp|pop|mail|gmail|googlemail|outlook|hotmail|protonmail|spacemail|temp-mail|ymail|email)([.-]|$)/ || ($1 == "DOMAIN-KEYWORD" && value ~ /^(gmail|outlook|hotmail|protonmail|email)$/))) print
                   }
-              ' "$file" >> 'download/special/Mail.list'
+              ' "$file" >> 'download/special/mail.list'
           done
-          merge_sources 'download/special/Mail.list' "${mail_source_files[@]}"
+          merge_sources 'download/special/mail.list' "${mail_source_files[@]}"
 
       - name: Copy single files
         run: |
@@ -318,14 +318,14 @@ jobs:
           cp 'download/special/cn-cidr.list.sources' 'meta/cncidr.list.sources'
           cp 'custom/apns.list' 'meta/apns.list'
           record_sources 'meta/apns.list' 'https://github.com/BlackCCCat/rule-set/tree/master/custom/apns.list'
-          cp 'download/special/ChinaDNS.list' 'meta/ChinaDNS.list'
-          cp 'download/special/ChinaDNS.list.sources' 'meta/ChinaDNS.list.sources'
-          cp 'download/special/DNS.list' 'meta/DNS.list'
-          cp 'download/special/DNS.list.sources' 'meta/DNS.list.sources'
-          cp 'download/special/Apple_Update.list' 'meta/Apple_Update.list'
-          cp 'download/special/Apple_Update.list.sources' 'meta/Apple_Update.list.sources'
-          cp 'download/special/Mail.list' 'meta/Mail.list'
-          cp 'download/special/Mail.list.sources' 'meta/Mail.list.sources'
+          cp 'download/special/dns-cn.list' 'meta/dns-cn.list'
+          cp 'download/special/dns-cn.list.sources' 'meta/dns-cn.list.sources'
+          cp 'download/special/dns.list' 'meta/dns.list'
+          cp 'download/special/dns.list.sources' 'meta/dns.list.sources'
+          cp 'download/special/apple_update.list' 'meta/apple_update.list'
+          cp 'download/special/apple_update.list.sources' 'meta/apple_update.list.sources'
+          cp 'download/special/mail.list' 'meta/mail.list'
+          cp 'download/special/mail.list.sources' 'meta/mail.list.sources'
 
       - name: Merge files
         run: |
@@ -625,8 +625,8 @@ jobs:
               'meta/hbo.list' \
               'meta/twitch.list' \
               'meta/tiktok.list' \
-          > 'meta/Media.list'
-          merge_sources 'meta/Media.list' \
+          > 'meta/media.list'
+          merge_sources 'meta/media.list' \
               'download/meta/youtube.list' 'download/surge/YouTube.list' \
               'download/meta/netflix.list' 'download/surge/Netflix.list' \
               'download/meta/disney.list' 'download/surge/Disney.list' \
@@ -635,11 +635,13 @@ jobs:
               'download/meta/twitch.list' 'download/surge/Twitch.list' \
               'download/meta/tiktok.list' 'download/surge/TikTok.list'
 
-          cat 'download/special/telegram-rules.list' \
+          cat 'download/meta/telegram.list' \
+              'download/special/telegram-rules.list' \
               'download/special/telegram-ip-rules.list' \
               'download/special/telegram-asn.list' \
-          > 'meta/Telegram.list'
-          merge_sources 'meta/Telegram.list' \
+          > 'meta/telegram.list'
+          merge_sources 'meta/telegram.list' \
+              'download/meta/telegram.list' \
               'download/special/telegram-rules.list' \
               'download/special/telegram-ip-rules.list' \
               'download/special/telegram-asn.list'

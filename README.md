@@ -525,7 +525,7 @@ singbox/
       </td>
     </tr>
     <tr>
-      <td><code>Media</code></td>
+      <td><code>media</code></td>
       <td>YouTube、Netflix、Disney、PrimeVideo、HBO、Twitch 和 TikTok 的合并去重规则，适用于 Surge 的 <code>OR</code> 组合匹配
       <br> 规则源:
       <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
@@ -533,37 +533,38 @@ singbox/
       </td>
     </tr>
     <tr>
-      <td><code>Mail</code></td>
+      <td><code>mail</code></td>
       <td>MagicRule 的邮箱服务规则与 Google、Microsoft、Yahoo 规则中邮件相关域名的合并去重结果
       <br>规则源:
       <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       </td>
     </tr>
     <tr>
-      <td><code>ChinaDNS</code></td>
+      <td><code>dns-cn</code></td>
       <td>中国大陆 DNS 服务规则
       <br> 规则源:
       <a href="https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/ChinaDNS.list">@ACL4SSR/ACL4SSR</a>
       </td>
     </tr>
     <tr>
-      <td><code>DNS</code></td>
+      <td><code>dns</code></td>
       <td>公共 DNS 服务规则
       <br> 规则源:
       <a href="https://github.com/LM-Firefly/Rules/blob/master/Special/DNS.list">@LM-Firefly/Rules</a>
       </td>
     </tr>
     <tr>
-      <td><code>Apple_Update</code></td>
+      <td><code>apple_update</code></td>
       <td>Apple 系统更新规则
       <br> 规则源:
       <a href="https://github.com/fmz200/wool_scripts/blob/main/Loon/rule/apple_update.list">@fmz200/wool_scripts</a>
       </td>
     </tr>
     <tr>
-      <td><code>Telegram</code></td>
-      <td>Telegram 域名、官方 IP CIDR 和 ASN 合并规则；ASN 为 Sukka 标注的补充项
+      <td><code>telegram</code></td>
+      <td>合并原有 Telegram 域名规则、SukkaW/Surge 域名规则、官方 IP CIDR 和 ASN；ASN 为 Sukka 标注的补充项
       <br> 规则源:
+      <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
       <a href="https://ruleset.skk.moe/List/ip/telegram.conf">Telegram IP CIDR 生成规则</a>
       <a href="https://core.telegram.org/resources/cidr.txt">Telegram 官方 CIDR 数据</a>
@@ -703,13 +704,13 @@ singbox/
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/apple.list">[Stash] apple</a></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/Apple_Update.list">[surge] Apple_Update</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/Apple_Update.list">[Loon] Apple_Update</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/Apple_Update.list">[ShadowRocket] Apple_Update</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/Apple_Update.list">[QuantumultX] Apple_Update</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/Apple_Update.yaml">[Egern] Apple_Update</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/Apple_Update.list">[Meta] Apple_Update</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/Apple_Update.list">[Stash] Apple_Update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/apple_update.list">[surge] apple_update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/apple_update.list">[Loon] apple_update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/apple_update.list">[ShadowRocket] apple_update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/apple_update.list">[QuantumultX] apple_update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/apple_update.yaml">[Egern] apple_update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/apple_update.list">[Meta] apple_update</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/apple_update.list">[Stash] apple_update</a></td>
     </tr>
     <tr>
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/bahamut.list">[surge] bahamut</a></td>
@@ -766,13 +767,13 @@ singbox/
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/cncidr-resolve.list">[Stash] cncidr-resolve</a></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/ChinaDNS.list">[surge] ChinaDNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/ChinaDNS.list">[Loon] ChinaDNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/ChinaDNS.list">[ShadowRocket] ChinaDNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/ChinaDNS.list">[QuantumultX] ChinaDNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/ChinaDNS.yaml">[Egern] ChinaDNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/ChinaDNS.list">[Meta] ChinaDNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/ChinaDNS.list">[Stash] ChinaDNS</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/dns-cn.list">[surge] dns-cn</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/dns-cn.list">[Loon] dns-cn</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/dns-cn.list">[ShadowRocket] dns-cn</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/dns-cn.list">[QuantumultX] dns-cn</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/dns-cn.yaml">[Egern] dns-cn</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/dns-cn.list">[Meta] dns-cn</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/dns-cn.list">[Stash] dns-cn</a></td>
     </tr>
     <tr>
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/crypto.list">[surge] crypto</a></td>
@@ -820,13 +821,13 @@ singbox/
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/dmm.list">[Stash] dmm</a></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/DNS.list">[surge] DNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/DNS.list">[Loon] DNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/DNS.list">[ShadowRocket] DNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/DNS.list">[QuantumultX] DNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/DNS.yaml">[Egern] DNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/DNS.list">[Meta] DNS</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/DNS.list">[Stash] DNS</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/dns.list">[surge] dns</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/dns.list">[Loon] dns</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/dns.list">[ShadowRocket] dns</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/dns.list">[QuantumultX] dns</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/dns.yaml">[Egern] dns</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/dns.list">[Meta] dns</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/dns.list">[Stash] dns</a></td>
     </tr>
     <tr>
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/douyin.list">[surge] douyin</a></td>
@@ -955,22 +956,22 @@ singbox/
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/iplocation-proxy.list">[Stash] iplocation-proxy</a></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/Mail.list">[surge] Mail</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/Mail.list">[Loon] Mail</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/Mail.list">[ShadowRocket] Mail</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/Mail.list">[QuantumultX] Mail</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/Mail.yaml">[Egern] Mail</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/Mail.list">[Meta] Mail</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/Mail.list">[Stash] Mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/mail.list">[surge] mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/mail.list">[Loon] mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/mail.list">[ShadowRocket] mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/mail.list">[QuantumultX] mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/mail.yaml">[Egern] mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/mail.list">[Meta] mail</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/mail.list">[Stash] mail</a></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/Media.list">[surge] Media</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/Media.list">[Loon] Media</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/Media.list">[ShadowRocket] Media</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/Media.list">[QuantumultX] Media</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/Media.yaml">[Egern] Media</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/Media.list">[Meta] Media</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/Media.list">[Stash] Media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/media.list">[surge] media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/media.list">[Loon] media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/media.list">[ShadowRocket] media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/media.list">[QuantumultX] media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/media.yaml">[Egern] media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/media.list">[Meta] media</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/media.list">[Stash] media</a></td>
     </tr>
     <tr>
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/microsoft-cn.list">[surge] microsoft-cn</a></td>
@@ -1108,13 +1109,13 @@ singbox/
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/talkatone.list">[Stash] talkatone</a></td>
     </tr>
     <tr>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/Telegram.list">[surge] Telegram</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/Telegram.list">[Loon] Telegram</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/Telegram.list">[ShadowRocket] Telegram</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/Telegram.list">[QuantumultX] Telegram</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/Telegram.yaml">[Egern] Telegram</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/Telegram.list">[Meta] Telegram</a></td>
-        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/Telegram.list">[Stash] Telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/telegram.list">[surge] telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/loon/telegram.list">[Loon] telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/shadowrocket/telegram.list">[ShadowRocket] telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/quantumultx/telegram.list">[QuantumultX] telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/egern/telegram.yaml">[Egern] telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/meta/telegram.list">[Meta] telegram</a></td>
+        <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/stash/telegram.list">[Stash] telegram</a></td>
     </tr>
     <tr>
         <td><a href="https://github.com/BlackCCCat/rule-set/raw/refs/heads/ruleset/surge/tiktok.list">[surge] tiktok</a></td>

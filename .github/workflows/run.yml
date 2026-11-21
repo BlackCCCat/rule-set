@@ -278,6 +278,34 @@ jobs:
               }' "$file" > tmp.list && mv tmp.list "${file}"
           done
 
+          mail_sources_dir='download/special/mail-sources'
+          mkdir -p "$mail_sources_dir"
+          mail_rule_names=('MailCom' 'Mailru' 'Protonmail' 'SpaceMail' 'TempMail' 'Yahoo')
+
+          for list in "${mail_rule_names[@]}"; do
+              python3 scripts/fetch_magicrule_surge.py \
+                  --name "$list" \
+                  --output "$mail_sources_dir/${list}.list" \
+                  --sources-output "$mail_sources_dir/${list}.list.sources"
+          done
+
+          mail_source_files=('download/surge/Google.list' 'download/surge/Microsoft.list')
+          for list in "${mail_rule_names[@]}"; do
+              mail_source_files+=("$mail_sources_dir/${list}.list")
+          done
+
+          : > 'download/special/Mail.list'
+          for file in "${mail_source_files[@]}"; do
+              awk -F, '
+                  NF < 2 { next }
+                  {
+                      value = tolower($2)
+                      if (value !~ /(^|[.-])mail-ads([.-]|$)/ && (value ~ /(^|[.-])(imap|smtp|pop|mail|gmail|googlemail|outlook|hotmail|protonmail|spacemail|temp-mail|ymail|email)([.-]|$)/ || ($1 == "DOMAIN-KEYWORD" && value ~ /^(gmail|outlook|hotmail|protonmail|email)$/))) print
+                  }
+              ' "$file" >> 'download/special/Mail.list'
+          done
+          merge_sources 'download/special/Mail.list' "${mail_source_files[@]}"
+
       - name: Copy single files
         run: |
           source scripts/ruleset_metadata.sh
@@ -296,6 +324,8 @@ jobs:
           cp 'download/special/DNS.list.sources' 'meta/DNS.list.sources'
           cp 'download/special/Apple_Update.list' 'meta/Apple_Update.list'
           cp 'download/special/Apple_Update.list.sources' 'meta/Apple_Update.list.sources'
+          cp 'download/special/Mail.list' 'meta/Mail.list'
+          cp 'download/special/Mail.list.sources' 'meta/Mail.list.sources'
 
       - name: Merge files
         run: |

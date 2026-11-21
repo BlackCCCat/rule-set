@@ -58,11 +58,6 @@ jobs:
           mkdir -p download/meta
           mkdir -p download/surge
           mkdir -p download/special
-          mkdir -p singbox/version1
-          mkdir -p singbox/version2
-          mkdir -p singbox/version3
-          mkdir -p singbox/version4
-          mkdir -p singbox/version5
           mkdir -p meta/domain
           mkdir -p meta/ipcidr
           mkdir -p meta/classical
@@ -775,103 +770,7 @@ jobs:
               add_metadata_header "$file" "$update_time" "$(metadata_sidecar "$file")"
           done
 
-      - name: Generate sing-box ruleset
-        run: |
-          for file in meta/*.list; do
-              awk '!/^#/' "$file" | awk -F',' '
-              BEGIN {
-                  printf "{\n";
-                  printf "  \"version\": 1,\n";
-                  printf "  \"rules\": [\n";
-                  printf "    {\n";
-              }
-              {
-                  if($1 == "DOMAIN-REGEX" && match($0, ",")){
-                      $2 = substr($0, RSTART + 1);
-                      gsub(/\\/, "\\\\", $2);
-                  }
-                  sub(/^"/, "", $2);
-                  sub(/^'"'"'/, "", $2);
-                  sub(/"$/, "", $2);
-                  sub(/'"'"'$/, "", $2);
-                  $2 = "\"" $2 "\"";
-                  if ($1 == "DOMAIN") {
-                      if (!domain++) {
-                          if (NR > 1) printf "\n      ],\n";
-                          printf "      \"domain\": [\n";
-                          printf "        %s", $2;
-                      } else {
-                          printf ",\n        %s", $2;
-                      }
-                  } else if ($1 == "DOMAIN-SUFFIX") {
-                      if (!suffix++) {
-                          if (NR > 1) printf "\n      ],\n";
-                          printf "      \"domain_suffix\": [\n";
-                          printf "        %s", $2;
-                      } else {
-                          printf ",\n        %s", $2;
-                      }
-                  } else if ($1 == "DOMAIN-KEYWORD") {
-                      if (!keyword++) {
-                          if (NR > 1) printf "\n      ],\n";
-                          printf "      \"domain_keyword\": [\n";
-                          printf "        %s", $2;
-                      } else {
-                          printf ",\n        %s", $2;
-                      }
-                  } else if ($1 == "DOMAIN-REGEX") {
-                      if (!regex++) {
-                          if (NR > 1) printf "\n      ],\n";
-                          printf "      \"domain_regex\": [\n";
-                          printf "        %s", $2;
-                      } else {
-                          printf ",\n        %s", $2;
-                      }
-                  } else if ($1 == "IP-CIDR" || $1 == "IP-CIDR6") {
-                      if (!cidr++) {
-                          if (NR > 1) printf "\n      ],\n";
-                          printf "      \"ip_cidr\": [\n";
-                          printf "        %s", $2;
-                      } else {
-                          printf ",\n        %s", $2;
-                      }
-                  }
-              }
-              END {
-                  printf "\n      ]\n";
-                  printf "    }\n";
-                  printf "  ]\n";
-                  printf "}\n";
-              }' > "singbox/version1/$(basename "$file" ".list").json"
-          done
-
-          rm -f singbox/version1/*-resolve.json
           rm -f meta/fake-ip-filter.list
-
-          for file in singbox/version1/*.json ; do
-              awk 'sub(/"version": 1,/, "\"version\": 2,", $0) 1' "${file}" > "singbox/version2/$(basename "$file")"
-              awk 'sub(/"version": 1,/, "\"version\": 3,", $0) 1' "${file}" > "singbox/version3/$(basename "$file")"
-              awk 'sub(/"version": 1,/, "\"version\": 4,", $0) 1' "${file}" > "singbox/version4/$(basename "$file")"
-              awk 'sub(/"version": 1,/, "\"version\": 5,", $0) 1' "${file}" > "singbox/version5/$(basename "$file")"
-          done
-
-      - name: Download and unzip `sing-box core`
-        run: |
-          # singbox_version=$(curl -fsSL https://github.com/SagerNet/sing-box/releases | grep -oE '/SagerNet/sing-box/releases/tag/[^\"]*'| sort -rV | head -1 | sed 's/.*v//')
-
-          singbox_version="1.14.0-alpha.10"
-
-          wget "https://github.com/SagerNet/sing-box/releases/download/v${singbox_version}/sing-box-${singbox_version}-linux-amd64.tar.gz" -O - | tar -zxf -
-
-          mv sing-box-${singbox_version}-linux-amd64/sing-box ./sing-box
-
-          chmod +x ./sing-box
-
-      - name: Generate sing-box srs
-        run: |
-          for file in singbox/*/*.json ; do
-              ./sing-box rule-set compile --output "${file%.json}.srs" "${file}"
-          done
 
       - name: Generate meta domains
         run: |
@@ -909,6 +808,9 @@ jobs:
           awk '!/^DOMAIN,|^DOMAIN-SUFFIX,|^IP-CIDR6?,/ { print }' meta/cdn.list > meta/classical/cdn.list
           awk '!/^DOMAIN,|^DOMAIN-SUFFIX,|^IP-CIDR6?,/ { print }' meta/dmca.list > meta/classical/dmca.list
           awk '!/^DOMAIN,|^DOMAIN-SUFFIX,|^IP-CIDR6?,/ { print }' meta/speedtest.list > meta/classical/speedtest.list
+          awk '!/^DOMAIN,|^DOMAIN-SUFFIX,|^IP-CIDR6?,/ { print }' meta/mail.list > meta/classical/mail.list
+          awk '!/^DOMAIN,|^DOMAIN-SUFFIX,|^IP-CIDR6?,/ { print }' meta/media.list > meta/classical/media.list
+          awk '!/^DOMAIN,|^DOMAIN-SUFFIX,|^IP-CIDR6?,/ { print }' meta/telegram.list > meta/classical/telegram.list
 
       - name: Download and unzip `mihomo core`
         run: |
@@ -1061,7 +963,7 @@ jobs:
           source scripts/ruleset_metadata.sh
 
           # Add provenance to generated text variants too. Binary formats keep
-          # their valid binary/JSON encoding and are linked through README.
+          # their valid binary encoding and are linked through README.
           for directory in meta/domain meta/ipcidr meta/classical stash/domain stash/ipcidr stash/classical; do
               [[ -d "$directory" ]] || continue
               for file in "$directory"/*.list; do
@@ -1090,7 +992,6 @@ jobs:
 
           find meta stash surge shadowrocket quantumultx loon egern -type f -name '*.sources' -delete
 
-          cp -r singbox/ push/
           cp -r meta/ push/
           cp -r stash/ push/
           cp -r surge/ push/

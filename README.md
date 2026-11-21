@@ -12,6 +12,8 @@
 
 每天早上 7:30（北京时间 UTC+8）自动构建，保持规则最新
 
+上游规则统一改由 [magical404/MagicRule](https://github.com/magical404/MagicRule) 的 Surge 产物索引生成。支持注释的规则列表和 YAML 文件顶部会写入构建时间和上游链接，便于核对来源；JSON 和二进制规则格式保持原有结构。
+
 收集于互联网，面向 mihomo/clash.meta、surge、loon、stash、shadowrocket、quantumultx、egern 和 sing-box 多个代理工具的定制 [规则集](https://github.com/QuixoticHeart/rule-set/tree/ruleset)
 
 - **[规则说明](#规则说明)**
@@ -103,7 +105,7 @@ singbox/
       <td><code>abema</code></td>
       <td>abema 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -150,7 +152,7 @@ singbox/
       <td><code>apple-proxy</code></td>
       <td>Apple 在中国大陆需要代理的规则列表
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/Elysian-Realme/FuGfConfig">@Elysian-Realme/FuGfConfig</a>
       </td>
     </tr>
@@ -158,7 +160,7 @@ singbox/
       <td><code>apple-tv</code></td>
       <td>Apple TV 流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -166,7 +168,7 @@ singbox/
       <td><code>apple</code></td>
       <td>Apple 服务
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -174,7 +176,7 @@ singbox/
       <td><code>bahamut</code></td>
       <td>巴哈姆特动漫
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -182,7 +184,7 @@ singbox/
       <td><code>bilibili</code></td>
       <td>哔哩哔哩动漫
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -220,7 +222,7 @@ singbox/
       <td><code>crypto</code></td>
       <td> 加密货币相关规则 <br> 包含 Binance，OKX，Bybit，Bitget 等常见交易所
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
       </td>
@@ -229,7 +231,7 @@ singbox/
       <td><code>dazn</code></td>
       <td>DAZN 体育流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -237,7 +239,7 @@ singbox/
       <td><code>disney</code></td>
       <td>迪士尼 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -248,7 +250,7 @@ singbox/
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       <a href="https://github.com/XIU2/TrackersListCollection">@XIU2/TrackersListCollection</a>
       <a href="https://github.com/ngosang/trackerslist">@ngosang/trackerslist</a>
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
       </td>
@@ -257,7 +259,7 @@ singbox/
       <td><code>dmm</code></td>
       <td>DMM 在线内容提供商
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -266,14 +268,14 @@ singbox/
       <td>抖音短视频平台
       <br> 规则源:
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       </td>
     </tr>
     <tr>
       <td><code>ecommerce</code></td>
       <td>电子商务平台 <br> 包含 Amazon，eBay，Shopee，Shopify 等
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -290,7 +292,7 @@ singbox/
       <td>国外常见论坛平台
       <br> 包括 Reddit，V2EX，Quora，PTT，4chan 等
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -298,7 +300,7 @@ singbox/
       <td><code>games-cn</code></td>
       <td>游戏平台、游戏下载在中国大陆可直连的规则列表
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -306,7 +308,7 @@ singbox/
       <td><code>games</code></td>
       <td>游戏平台、游戏下载规则列表
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       </td>
@@ -315,7 +317,7 @@ singbox/
       <td><code>gfw</code></td>
       <td>被 GFW 屏蔽的域名列表
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -323,7 +325,7 @@ singbox/
       <td><code>gits</code></td>
       <td>Git仓库规则集合 <br> 包含 GitHub，GitLab，Gitee，GitBook
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -331,7 +333,7 @@ singbox/
       <td><code>google</code></td>
       <td> Google 谷歌服务
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -339,7 +341,7 @@ singbox/
       <td><code>googlefcm</code></td>
       <td>Google Firebase Cloud Messaging 谷歌推送服务
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -347,7 +349,7 @@ singbox/
       <td><code>hbo</code></td>
       <td>HBO 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -364,7 +366,7 @@ singbox/
       <td><code>hulu</code></td>
       <td>Hulu 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -379,7 +381,7 @@ singbox/
       <td><code>microsoft</code></td>
       <td>Microsoft 微软服务
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -387,7 +389,7 @@ singbox/
       <td><code>mytvsuper</code></td>
       <td>MyTV SUPER 在线视频点播服务平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -395,7 +397,7 @@ singbox/
       <td><code>netflix</code></td>
       <td>Netflix 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -403,7 +405,7 @@ singbox/
       <td><code>niconico</code></td>
       <td>Niconico 视频网站
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -411,7 +413,7 @@ singbox/
       <td><code>onedrive</code></td>
       <td>OneDrive 网盘
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -419,7 +421,7 @@ singbox/
       <td><code>paypal</code></td>
       <td>PayPal 在线支付与转账平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -427,7 +429,7 @@ singbox/
       <td><code>primevideo</code></td>
       <td>PrimeVideo 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -435,7 +437,7 @@ singbox/
       <td><code>private</code></td>
       <td>私有网络地址
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -444,7 +446,7 @@ singbox/
       <td>国外需要代理的域名
       <br> 规则源:
       <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/Loyalsoldier/v2ray-rules-dat">@Loyalsoldier/v2ray-rules-dat</a>
       </td>
     </tr>
@@ -452,7 +454,7 @@ singbox/
       <td><code>socialmedia-cn</code></td>
       <td>国内社交媒体规则集合 <br> 包含 NGA，XiaoHongShu，Weibo，Zhihu，DouBan，Coolapk
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -460,7 +462,7 @@ singbox/
       <td><code>socialmedia</code></td>
       <td>国外社交媒体规则集合 <br> 包含 Discord，Whatsapp，Line，Instagram，Facebook，Telegram，Twitter，Signal 等
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -470,7 +472,7 @@ singbox/
       <br> 规则源:
       <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -478,7 +480,7 @@ singbox/
       <td><code>spotify</code></td>
       <td>Spotify 音乐流媒体平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -494,7 +496,7 @@ singbox/
       <td><code>tiktok</code></td>
       <td>TikTok 短视频平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/jmdugan/blocklists">@jmdugan/blocklists</a>
       </td>
@@ -510,7 +512,7 @@ singbox/
       <td><code>twitch</code></td>
       <td>Twitch 直播平台
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -518,8 +520,46 @@ singbox/
       <td><code>youtube</code></td>
       <td>YouTube 视频网站
       <br> 规则源:
-      <a href="https://github.com/blackmatrix7/ios_rule_script">@blackmatrix7/ios_rule_script</a>
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>Media</code></td>
+      <td>YouTube、Netflix、Disney、PrimeVideo、HBO、Twitch 和 TikTok 的合并去重规则，适用于 Surge 的 <code>OR</code> 组合匹配
+      <br> 规则源:
+      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>ChinaDNS</code></td>
+      <td>中国大陆 DNS 服务规则
+      <br> 规则源:
+      <a href="https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/ChinaDNS.list">@ACL4SSR/ACL4SSR</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>DNS</code></td>
+      <td>公共 DNS 服务规则
+      <br> 规则源:
+      <a href="https://github.com/LM-Firefly/Rules/blob/master/Special/DNS.list">@LM-Firefly/Rules</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>Apple_Update</code></td>
+      <td>Apple 系统更新规则
+      <br> 规则源:
+      <a href="https://github.com/fmz200/wool_scripts/blob/main/Loon/rule/apple_update.list">@fmz200/wool_scripts</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>Telegram</code></td>
+      <td>Telegram 域名、官方 IP CIDR 和 ASN 合并规则；ASN 为 Sukka 标注的补充项
+      <br> 规则源:
+      <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
+      <a href="https://ruleset.skk.moe/List/ip/telegram.conf">Telegram IP CIDR 生成规则</a>
+      <a href="https://core.telegram.org/resources/cidr.txt">Telegram 官方 CIDR 数据</a>
       </td>
     </tr>
   </tbody>
@@ -1052,6 +1092,16 @@ singbox/
         <td><a href="https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/stash/youtube.list">[Stash] youtube</a></td>
     </tr>
 </table>
+
+#### 新增规则集快捷链接
+
+| 规则集 | Surge | Loon | Shadowrocket | Quantumult X | Egern | Meta | Stash |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Media | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/surge/Media.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/loon/Media.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/shadowrocket/Media.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/quantumultx/Media.list) | [yaml](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/egern/Media.yaml) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/Media.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/stash/Media.list) |
+| ChinaDNS | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/surge/ChinaDNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/loon/ChinaDNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/shadowrocket/ChinaDNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/quantumultx/ChinaDNS.list) | [yaml](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/egern/ChinaDNS.yaml) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/ChinaDNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/stash/ChinaDNS.list) |
+| DNS | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/surge/DNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/loon/DNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/shadowrocket/DNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/quantumultx/DNS.list) | [yaml](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/egern/DNS.yaml) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/DNS.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/stash/DNS.list) |
+| Apple_Update | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/surge/Apple_Update.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/loon/Apple_Update.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/shadowrocket/Apple_Update.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/quantumultx/Apple_Update.list) | [yaml](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/egern/Apple_Update.yaml) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/Apple_Update.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/stash/Apple_Update.list) |
+| Telegram | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/surge/Telegram.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/loon/Telegram.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/shadowrocket/Telegram.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/quantumultx/Telegram.list) | [yaml](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/egern/Telegram.yaml) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/Telegram.list) | [list](https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/stash/Telegram.list) |
 
 ### mihomo/clash.meta 和 stash 类型拆分规则集目录
 
@@ -2525,7 +2575,7 @@ sing-box 文档关于 [domain_suffix 行为更新](https://sing-box.sagernet.org
 
 **向提供数据来源的作者们表示真诚的感谢**
 
-- [@blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
+- [@magical404/MagicRule](https://github.com/magical404/MagicRule)
 - [@MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)
 - [@felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
 - [@Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)

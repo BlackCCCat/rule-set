@@ -10,14 +10,16 @@ on:
       - "**/README.md"
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Set variables
         run: |
           echo "update_version=$(date -d '+8 hours' +%Y-%m-%d)" >> ${GITHUB_ENV}
+          echo "update_time=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S (UTC+8)')" >> ${GITHUB_ENV}
           echo "mihomo_domains=meta-rules/geo/geosite/classical" >> ${GITHUB_ENV}
           echo "mihomo_ipcidr=meta-rules/geo/geoip/classical" >> ${GITHUB_ENV}
-          echo "bm7_surge=bm7-rules/rule/Surge" >> ${GITHUB_ENV}
         shell: bash
 
       - name: Checkout Repo
@@ -32,15 +34,6 @@ jobs:
           sparse-checkout: |
             geo/geosite/classical
             geo/geoip/classical
-
-      - name: Checkout "blackmatrix7/ios_rule_script"
-        uses: actions/checkout@v7
-        with:
-          repository: "blackmatrix7/ios_rule_script"
-          ref: master
-          path: "bm7-rules"
-          sparse-checkout: |
-            rule/Surge
 
       - name: Checkout "Loyalsoldier/geoip"
         uses: actions/checkout@v7
@@ -85,10 +78,19 @@ jobs:
 
       - name: Download meta ruleset
         run: |
+          source scripts/ruleset_metadata.sh
+
           domain_lists=('category-ads-all' 'category-httpdns-cn' 'apple' 'microsoft@cn' 'onedrive' 'microsoft' 'github' 'gitlab' 'gitee' 'gitbook' 'apple-intelligence' 'category-ai-!cn' 'amazon' 'shopify' 'category-ecommerce' 'paypal' 'wise' 'category-cryptocurrency' 'category-game-accelerator-cn' 'category-game-platforms-download@cn' 'category-games@cn' 'category-game-platforms-download' 'category-games-!cn' 'category-forums' 'talkatone' 'discord' 'line' 'telegram' 'signal' 'whatsapp' 'category-social-media-!cn' 'tiktok' 'bilibili' 'googlefcm' 'youtube' 'google' 'spotify' 'twitch' 'bahamut' 'hbo' 'disney' 'primevideo' 'netflix' 'hulu' 'abema' 'dmm' 'niconico' 'apple-tvplus' 'dazn' 'mytvsuper' 'category-cdn-!cn' 'category-speedtest@cn' 'category-speedtest' 'test-ipv6@cn' 'test-ipv6' 'tld-!cn' 'category-public-tracker' 'tracker' 'category-pt@!cn' 'category-pt' 'category-anticensorship' 'gfw' 'private' 'nga' 'xiaohongshu' 'sina' 'zhihu' 'douban' 'coolapk')
 
           for list in "${domain_lists[@]}"; do
               cp "${mihomo_domains}/${list}.list" "download/meta/${list}.list"
+              record_sources "download/meta/${list}.list" \
+                  "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/${list}.list"
+          done
+
+          for file in custom/*.list custom/domain/*.list; do
+              [[ -f "$file" ]] || continue
+              record_sources "$file" "https://github.com/QuixoticHeart/rule-set/tree/master/${file#./}"
           done
 
           ipcidr_lists=('facebook' 'telegram' 'twitter' 'google' 'netflix' 'private')
@@ -96,6 +98,8 @@ jobs:
           for list in "${ipcidr_lists[@]}"; do
               echo >> "download/meta/${list}.list"
               cat "${mihomo_ipcidr}/${list}.list" >> "download/meta/${list}.list"
+              record_sources "download/meta/${list}.list" \
+                  "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geoip/classical/${list}.list"
           done
 
           files=(
@@ -112,10 +116,11 @@ jobs:
 
           for file in "${files[@]}"; do
               set -- $file
-              curl -fsSL "$2" > "download/meta/$1" || { echo "Download Failed: $1"; exit 1; }
+              download_with_sources "$2" "download/meta/$1" || { echo "Download Failed: $1"; exit 1; }
           done
 
           sed -n '/## >> 抖音/,/##/{//!p}' "download/meta/DouYin.list" > tmp.list && mv tmp.list "download/meta/douyin.list"
+          cp "download/meta/DouYin.list.sources" "download/meta/douyin.list.sources"
 
           for file in download/meta/*.list; do
               awk '{ gsub(/[[:cntrl:]]/, "", $0) } { gsub(/[^:]\/\/.*/, "", $0) } { gsub(/,\s+/, ",", $0) } /^\s*[#;]/ { next } /^$/ { next } { print $0 } END { print "" }' "$file" > tmp.list && mv tmp.list "${file}"
@@ -123,25 +128,34 @@ jobs:
 
       - name: Download surge ruleset
         run: |
+          source scripts/ruleset_metadata.sh
+
           surge_lists=('AppleProxy' 'Download' 'OneDrive' 'Microsoft' 'GitHub' 'GitLab' 'Gitee' 'GitBook' 'Amazon' 'eBay' 'Shopee' 'Shopify' 'PayPal' 'Crypto' 'Cryptocurrency' 'SteamCN' 'Game' 'Reddit' 'Discord' 'Whatsapp' 'Line' 'Threads' 'Instagram' 'Facebook' 'Twitter' 'TikTok' 'BiliBili' 'GoogleFCM' 'YouTube' 'Google' 'Spotify' 'Twitch' 'Bahamut' 'HBO' 'Disney' 'PrimeVideo' 'Netflix' 'Hulu' 'Abema' 'DMM' 'Niconico' 'AppleTV' 'DAZN' 'myTVSUPER' 'Speedtest' 'Lan' 'NGA' 'XiaoHongShu' 'Weibo' 'Zhihu' 'DouBan' 'Coolapk' 'DouYin')
 
           for list in "${surge_lists[@]}"; do
-              cp "${bm7_surge}/${list}/${list}.list" "download/surge/${list}.list"
+              python3 scripts/fetch_magicrule_surge.py \
+                  --name "$list" \
+                  --output "download/surge/${list}.list" \
+                  --sources-output "download/surge/${list}.list.sources"
           done
 
           surge_game_lists=('GameDownloadCN' 'GameDownload')
 
           for list in "${surge_game_lists[@]}"; do
-              cp "${bm7_surge}/Game/${list}/${list}.list" "download/surge/${list}.list"
+              python3 scripts/fetch_magicrule_surge.py \
+                  --name "$list" \
+                  --output "download/surge/${list}.list" \
+                  --sources-output "download/surge/${list}.list.sources"
           done
 
           surge_all_src_names=('Apple' 'Proxy' 'Global')
           surge_all_dst_names=('Apple' 'GFW' 'Proxy')
 
           for i in "${!surge_all_dst_names[@]}"; do
-              src_file="${bm7_surge}/${surge_all_src_names[i]}/${surge_all_src_names[i]}_All.list"
-              dst_file="download/surge/${surge_all_dst_names[i]}.list"
-              cp "$src_file" "$dst_file"
+              python3 scripts/fetch_magicrule_surge.py \
+                  --name "${surge_all_src_names[i]}" \
+                  --output "download/surge/${surge_all_dst_names[i]}.list" \
+                  --sources-output "download/surge/${surge_all_dst_names[i]}.list.sources"
           done
 
           files=(
@@ -160,7 +174,7 @@ jobs:
 
           for file in "${files[@]}"; do
               set -- $file
-              curl -fsSL "$2" > "download/surge/$1" || { echo "Download Failed: $1"; exit 1; }
+              download_with_sources "$2" "download/surge/$1" || { echo "Download Failed: $1"; exit 1; }
           done
 
           for file in download/surge/*.list; do
@@ -169,6 +183,8 @@ jobs:
 
       - name: Download special ruleset
         run: |
+          source scripts/ruleset_metadata.sh
+
           files=(
               'cdn-domains.list https://ruleset.skk.moe/Clash/domainset/cdn.txt'
               'download-domains.list https://ruleset.skk.moe/Clash/domainset/download.txt'
@@ -187,12 +203,23 @@ jobs:
               'ngosang-trackers.list https://github.com/ngosang/trackerslist/raw/refs/heads/master/trackers_all.txt'
               'fake-ip-filter-sc.list https://github.com/juewuy/ShellCrash/raw/refs/heads/dev/public/fake_ip_filter.list'
               'fake-ip-filter-oc.list https://github.com/vernesong/OpenClash/raw/refs/heads/master/luci-app-openclash/root/etc/openclash/custom/openclash_custom_fake_filter.list'
+              'ChinaDNS.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ChinaDNS.list'
+              'DNS.list https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DNS.list'
+              'Apple_Update.list https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/apple_update.list'
+              'telegram-rules.list https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/non_ip/telegram.conf'
+              'telegram-ip-rules.list https://ruleset.skk.moe/List/ip/telegram.conf'
+              'telegram-asn.list https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/ip/telegram_asn.conf'
           )
 
           for file in "${files[@]}"; do
               set -- $file
-              curl -fsSL "$2" > "download/special/$1" || { echo "Download Failed: $1"; exit 1; }
+              download_with_sources "$2" "download/special/$1" || { echo "Download Failed: $1"; exit 1; }
           done
+
+          record_sources 'download/special/telegram-ip-rules.list' \
+              'https://ruleset.skk.moe/List/ip/telegram.conf' \
+              'https://github.com/SukkaW/Surge' \
+              'https://core.telegram.org/resources/cidr.txt'
 
           for file in download/special/*.list; do
               awk '{ gsub(/[[:cntrl:]]/, "", $0) } { gsub(/[^:]\/\/.*/, "", $0) } { gsub(/,\s+/, ",", $0) } /^\s*[#;]/ { next } /^$/ { next } { print $0 } END { print "" }' "$file" > tmp.list && mv tmp.list "${file}"
@@ -253,13 +280,26 @@ jobs:
 
       - name: Copy single files
         run: |
+          source scripts/ruleset_metadata.sh
+
           cp 'download/meta/microsoft@cn.list' 'meta/microsoft-cn.list'
+          cp 'download/meta/microsoft@cn.list.sources' 'meta/microsoft-cn.list.sources'
           cp 'download/meta/tld-!cn.list' 'meta/tld-proxy.list'
+          cp 'download/meta/tld-!cn.list.sources' 'meta/tld-proxy.list.sources'
           cp 'download/special/cn-cidr.list' 'meta/cncidr.list'
+          cp 'download/special/cn-cidr.list.sources' 'meta/cncidr.list.sources'
           cp 'custom/apns.list' 'meta/apns.list'
+          record_sources 'meta/apns.list' 'https://github.com/QuixoticHeart/rule-set/tree/master/custom/apns.list'
+          cp 'download/special/ChinaDNS.list' 'meta/ChinaDNS.list'
+          cp 'download/special/ChinaDNS.list.sources' 'meta/ChinaDNS.list.sources'
+          cp 'download/special/DNS.list' 'meta/DNS.list'
+          cp 'download/special/DNS.list.sources' 'meta/DNS.list.sources'
+          cp 'download/special/Apple_Update.list' 'meta/Apple_Update.list'
+          cp 'download/special/Apple_Update.list.sources' 'meta/Apple_Update.list.sources'
 
       - name: Merge files
         run: |
+          source scripts/ruleset_metadata.sh
           src1_dir="download/meta"
           src2_dir="download/surge"
           dst_dir="meta"
@@ -276,17 +316,54 @@ jobs:
               dst_file="$dst_dir/${dst_names[i]}.list"
 
               cat "$src1_file" "$src2_file" > "$dst_file"
+              merge_sources "$dst_file" "$src1_file" "$src2_file"
           done
+
+      - name: Merge requested additional rulesets
+        run: |
+          source scripts/ruleset_metadata.sh
+
+          cat 'meta/youtube.list' \
+              'meta/netflix.list' \
+              'meta/disney.list' \
+              'meta/primevideo.list' \
+              'meta/hbo.list' \
+              'meta/twitch.list' \
+              'meta/tiktok.list' \
+          > 'meta/Media.list'
+          merge_sources 'meta/Media.list' \
+              'download/meta/youtube.list' 'download/surge/YouTube.list' \
+              'download/meta/netflix.list' 'download/surge/Netflix.list' \
+              'download/meta/disney.list' 'download/surge/Disney.list' \
+              'download/meta/primevideo.list' 'download/surge/PrimeVideo.list' \
+              'download/meta/hbo.list' 'download/surge/HBO.list' \
+              'download/meta/twitch.list' 'download/surge/Twitch.list' \
+              'download/meta/tiktok.list' 'download/surge/TikTok.list'
+
+          cat 'download/special/telegram-rules.list' \
+              'download/special/telegram-ip-rules.list' \
+              'download/special/telegram-asn.list' \
+          > 'meta/Telegram.list'
+          merge_sources 'meta/Telegram.list' \
+              'download/special/telegram-rules.list' \
+              'download/special/telegram-ip-rules.list' \
+              'download/special/telegram-asn.list'
 
       - name: Merge httpdns file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/meta/category-httpdns-cn.list' \
               'download/meta/iplocation-reject.list' \
               'download/surge/HTTPDNS.list' \
           > meta/httpdns.list
+          merge_sources 'meta/httpdns.list' \
+              'download/meta/category-httpdns-cn.list' \
+              'download/meta/iplocation-reject.list' \
+              'download/surge/HTTPDNS.list'
 
       - name: Merge adrules file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/surge/Adrules.list' \
               'download/surge/AntiAD.list' \
               'download/surge/PCDN.list' \
@@ -295,9 +372,14 @@ jobs:
               | \
               grep -vxF -f 'custom/reject-need-to-remove.list' \
           > meta/adrules.list
+          merge_sources 'meta/adrules.list' \
+              'download/surge/Adrules.list' 'download/surge/AntiAD.list' \
+              'download/surge/PCDN.list' 'download/meta/category-ads-all.list' \
+              'meta/httpdns.list'
 
       - name: Merge cdn file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/special/cdn-domains.list' \
               'download/special/download-domains.list' \
               'download/special/cdn-surge.list' \
@@ -305,13 +387,20 @@ jobs:
               'download/meta/category-cdn-!cn.list' \
               'custom/cdn.list' \
           > meta/cdn.list
+          merge_sources 'meta/cdn.list' \
+              'download/special/cdn-domains.list' 'download/special/download-domains.list' \
+              'download/special/cdn-surge.list' 'download/special/download-surge.list' \
+              'download/meta/category-cdn-!cn.list' 'custom/cdn.list'
 
       - name: Merge iplocation-direct file
         run: |
+          source scripts/ruleset_metadata.sh
           grep -vxF -f 'meta/cdn.list' 'download/meta/iplocation-direct.list' > 'meta/iplocation-direct.list'
+          merge_sources 'meta/iplocation-direct.list' 'download/meta/iplocation-direct.list'
 
       - name: Merge iplocation-proxy file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/meta/iplocation-proxy.list' \
               'download/surge/LocRedBook.list' \
               'download/surge/LocDouyin.list' \
@@ -319,47 +408,71 @@ jobs:
               | \
               grep -vxF -f 'meta/httpdns.list' \
           > meta/iplocation-proxy.list
+          merge_sources 'meta/iplocation-proxy.list' \
+              'download/meta/iplocation-proxy.list' 'download/surge/LocRedBook.list' \
+              'download/surge/LocDouyin.list' 'download/surge/LocKuaiShou.list'
 
       - name: Merge apple-proxy file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/apple-intelligence.list' \
               'download/meta/apple-intelligence.list' \
               'download/surge/Apple-Proxy.list' \
               'download/surge/AppleProxy.list' \
           > meta/apple-proxy.list
+          merge_sources 'meta/apple-proxy.list' \
+              'custom/apple-intelligence.list' 'download/meta/apple-intelligence.list' \
+              'download/surge/Apple-Proxy.list' 'download/surge/AppleProxy.list'
 
       - name: Merge apple-cn file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/special/apple-cn-surge.list' \
               'download/special/apple-china.list' \
           > meta/apple-cn.list
+          merge_sources 'meta/apple-cn.list' \
+              'download/special/apple-cn-surge.list' 'download/special/apple-china.list'
 
       - name: Merge apple file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/apple.list' \
               'meta/apple-proxy.list' \
               'download/meta/apple.list' \
               'download/surge/Apple.list' \
           > meta/apple.list
+          merge_sources 'meta/apple.list' \
+              'custom/apple.list' 'meta/apple-proxy.list' \
+              'download/meta/apple.list' 'download/surge/Apple.list'
 
       - name: Merge microsoft file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/microsoft.list' \
               'download/meta/microsoft.list' \
               'download/surge/Microsoft.list' \
           > meta/microsoft.list
+          merge_sources 'meta/microsoft.list' \
+              'custom/microsoft.list' 'download/meta/microsoft.list' 'download/surge/Microsoft.list'
 
       - name: Merge games-cn file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/meta/category-game-accelerator-cn.list' \
               'download/meta/category-game-platforms-download@cn.list' \
               'download/meta/category-games@cn.list' \
               'download/surge/SteamCN.list' \
               'download/surge/GameDownloadCN.list' \
           > meta/games-cn.list
+          merge_sources 'meta/games-cn.list' \
+              'download/meta/category-game-accelerator-cn.list' \
+              'download/meta/category-game-platforms-download@cn.list' \
+              'download/meta/category-games@cn.list' \
+              'download/surge/SteamCN.list' 'download/surge/GameDownloadCN.list'
 
       - name: Merge games file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'meta/games-cn.list' \
               'download/meta/category-game-platforms-download.list' \
               'download/meta/category-games-!cn.list' \
@@ -367,9 +480,14 @@ jobs:
               'download/surge/Game.list' \
               'download/surge/GameDownload.list' \
           > meta/games.list
+          merge_sources 'meta/games.list' \
+              'meta/games-cn.list' 'download/meta/category-game-platforms-download.list' \
+              'download/meta/category-games-!cn.list' 'download/meta/Game.list' \
+              'download/surge/Game.list' 'download/surge/GameDownload.list'
 
       - name: Merge gits file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/surge/GitHub.list' \
               'download/surge/GitLab.list' \
               'download/surge/Gitee.list' \
@@ -379,9 +497,15 @@ jobs:
               'download/meta/gitee.list' \
               'download/meta/gitbook.list' \
           > meta/gits.list
+          merge_sources 'meta/gits.list' \
+              'download/surge/GitHub.list' 'download/surge/GitLab.list' \
+              'download/surge/Gitee.list' 'download/surge/GitBook.list' \
+              'download/meta/github.list' 'download/meta/gitlab.list' \
+              'download/meta/gitee.list' 'download/meta/gitbook.list'
 
       - name: Merge ai file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/apple-intelligence.list' \
               'download/surge/AI.list' \
               'download/special/ai-surge.list' \
@@ -389,9 +513,14 @@ jobs:
               'download/meta/category-ai-!cn.list' \
               'download/meta/ai.list' \
           > meta/ai.list
+          merge_sources 'meta/ai.list' \
+              'custom/apple-intelligence.list' 'download/surge/AI.list' \
+              'download/special/ai-surge.list' 'download/meta/apple-intelligence.list' \
+              'download/meta/category-ai-!cn.list' 'download/meta/ai.list'
 
       - name: Merge ecommerce file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/surge/Amazon.list' \
               'download/surge/eBay.list' \
               'download/surge/Shopee.list' \
@@ -402,9 +531,15 @@ jobs:
               | \
               grep -vxF -f 'meta/primevideo.list' \
           > meta/ecommerce.list
+          merge_sources 'meta/ecommerce.list' \
+              'download/surge/Amazon.list' 'download/surge/eBay.list' \
+              'download/surge/Shopee.list' 'download/surge/Shopify.list' \
+              'download/meta/category-ecommerce.list' 'download/meta/amazon.list' \
+              'download/meta/shopify.list'
 
       - name: Merge crypto file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/crypto.list' \
               'download/surge/Crypto.list' \
               'download/surge/Cryptocurrency.list' \
@@ -412,9 +547,14 @@ jobs:
               'download/meta/category-cryptocurrency.list' \
               'download/meta/wise.list' \
           > meta/crypto.list
+          merge_sources 'meta/crypto.list' \
+              'custom/crypto.list' 'download/surge/Crypto.list' \
+              'download/surge/Cryptocurrency.list' 'download/meta/crypto.list' \
+              'download/meta/category-cryptocurrency.list' 'download/meta/wise.list'
 
       - name: Merge socialmedia-cn file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/surge/NGA.list' \
               'download/surge/XiaoHongShu.list' \
               'download/surge/Weibo.list' \
@@ -428,9 +568,17 @@ jobs:
               'download/meta/douban.list' \
               'download/meta/coolapk.list' \
           > meta/socialmedia-cn.list
+          merge_sources 'meta/socialmedia-cn.list' \
+              'download/surge/NGA.list' 'download/surge/XiaoHongShu.list' \
+              'download/surge/Weibo.list' 'download/surge/Zhihu.list' \
+              'download/surge/DouBan.list' 'download/surge/Coolapk.list' \
+              'download/meta/nga.list' 'download/meta/xiaohongshu.list' \
+              'download/meta/sina.list' 'download/meta/zhihu.list' \
+              'download/meta/douban.list' 'download/meta/coolapk.list'
 
       - name: Merge socialmedia file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/telegram.list' \
               'download/surge/Discord.list' \
               'download/surge/Whatsapp.list' \
@@ -446,22 +594,38 @@ jobs:
               'download/meta/signal.list' \
               'download/meta/category-social-media-!cn.list' \
           > meta/socialmedia.list
+          merge_sources 'meta/socialmedia.list' \
+              'custom/telegram.list' 'download/surge/Discord.list' \
+              'download/surge/Whatsapp.list' 'download/surge/Line.list' \
+              'download/surge/Threads.list' 'download/surge/Instagram.list' \
+              'download/surge/Facebook.list' 'download/surge/Twitter.list' \
+              'download/meta/discord.list' 'download/meta/whatsapp.list' \
+              'download/meta/line.list' 'download/meta/telegram.list' \
+              'download/meta/signal.list' 'download/meta/category-social-media-!cn.list'
 
       - name: Merge tiktok file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/surge/TikTok.list' \
               'download/meta/tiktok.list' \
               'download/special/tiktok-host.list' \
           > meta/tiktok.list
+          merge_sources 'meta/tiktok.list' \
+              'download/surge/TikTok.list' 'download/meta/tiktok.list' \
+              'download/special/tiktok-host.list'
 
       - name: Merge forum file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/surge/Reddit.list' \
               'download/meta/category-forums.list' \
           > meta/forum.list
+          merge_sources 'meta/forum.list' \
+              'download/surge/Reddit.list' 'download/meta/category-forums.list'
 
       - name: Merge speedtest file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'custom/speedtest.list' \
               'download/special/speedtest-domains.list' \
               'download/meta/category-speedtest.list' \
@@ -471,16 +635,25 @@ jobs:
               | \
               grep -vxF -f 'download/meta/test-ipv6@cn.list' -f 'download/meta/category-speedtest@cn.list' \
           > meta/speedtest.list
+          merge_sources 'meta/speedtest.list' \
+              'custom/speedtest.list' 'download/special/speedtest-domains.list' \
+              'download/meta/category-speedtest.list' 'download/meta/SpeedTest.list' \
+              'download/meta/test-ipv6.list' 'download/surge/Speedtest.list'
 
       - name: Merge gfw file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/meta/category-anticensorship.list' \
               'download/meta/gfw.list' \
               'download/surge/GFW.list' \
           > meta/gfw.list
+          merge_sources 'meta/gfw.list' \
+              'download/meta/category-anticensorship.list' 'download/meta/gfw.list' \
+              'download/surge/GFW.list'
 
       - name: Merge proxy file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'meta/crypto.list' \
               'meta/tiktok.list' \
               'meta/gfw.list' \
@@ -491,9 +664,14 @@ jobs:
               | \
               grep -vxF -f 'meta/tld-proxy.list' -f 'meta/adrules.list' \
           > meta/proxy.list
+          merge_sources 'meta/proxy.list' \
+              'meta/crypto.list' 'meta/tiktok.list' 'meta/gfw.list' \
+              'download/surge/Global.list' 'download/surge/Proxy.list' \
+              'download/special/proxy-data.list' 'custom/proxy.list'
 
       - name: Merge dmca file
         run: |
+          source scripts/ruleset_metadata.sh
           cat 'download/special/XIU2-trackers.list' \
               'download/special/ngosang-trackers.list' \
               'download/special/applications-classical-yaml.list' \
@@ -505,10 +683,16 @@ jobs:
               | \
               grep -vxF -f 'download/meta/category-pt@!cn.list' \
           > meta/dmca.list
+          merge_sources 'meta/dmca.list' \
+              'download/special/XIU2-trackers.list' 'download/special/ngosang-trackers.list' \
+              'download/special/applications-classical-yaml.list' 'download/meta/DMCA.list' \
+              'download/meta/category-public-tracker.list' 'download/meta/tracker.list' \
+              'download/meta/category-pt.list' 'download/surge/Download.list'
 
       - name: Merge fake-ip-filter file
         run: |
           source scripts/ruleset_process.sh
+          source scripts/ruleset_metadata.sh
 
           cat 'download/special/fake-ip-filter-sc.list' \
               'download/special/fake-ip-filter-oc.list' \
@@ -516,10 +700,15 @@ jobs:
               | \
               clash_domain_to_classical \
           > meta/fake-ip-filter.list
+          merge_sources 'meta/fake-ip-filter.list' \
+              'download/special/fake-ip-filter-sc.list' \
+              'download/special/fake-ip-filter-oc.list' \
+              'custom/domain/fake-ip-filter.list'
 
       - name: Deduplicate ruleset
         run: |
           source scripts/ruleset_process.sh
+          source scripts/ruleset_metadata.sh
 
           for file in meta/*.list ; do
               if grep -q '^IP-CIDR' "${file}"; then
@@ -536,15 +725,28 @@ jobs:
           dedupe_classical_to_clash_domain 'meta/fake-ip-filter.list' > 'meta/domain/fake-ip-filter.list'
 
           grep -vxF -f 'meta/adrules.list' 'download/special/accelerated-china.list' > 'cn.list'
+          merge_sources 'cn.list' 'download/special/accelerated-china.list'
           sort 'custom/direct-need-to-remove.list' 'meta/tld-proxy.list' 'meta/cdn.list' 'meta/proxy.list' | uniq > tmp_remove.list
           sort 'cn.list' 'tmp_remove.list' 'custom/direct.list' | uniq | domain_dedupe | grep -vxF -f 'tmp_remove.list' | ruleset_sort > 'meta/cn.list'
+          merge_sources 'meta/cn.list' \
+              'cn.list' 'custom/direct-need-to-remove.list' \
+              'meta/tld-proxy.list' 'meta/cdn.list' 'meta/proxy.list' 'custom/direct.list'
 
           awk '{ sub(/,no-resolve$/, ""); print }' meta/cncidr.list > meta/cncidr-resolve.list
+          cp "$(metadata_sidecar meta/cncidr.list)" "$(metadata_sidecar meta/cncidr-resolve.list)"
+
+          for file in meta/*.list; do
+              if [[ ! -s "$(metadata_sidecar "$file")" ]]; then
+                  echo "Missing upstream source metadata for $file" >&2
+                  exit 1
+              fi
+              add_metadata_header "$file" "$update_time" "$(metadata_sidecar "$file")"
+          done
 
       - name: Generate sing-box ruleset
         run: |
           for file in meta/*.list; do
-              awk -F',' '
+              awk '!/^#/' "$file" | awk -F',' '
               BEGIN {
                   printf "{\n";
                   printf "  \"version\": 1,\n";
@@ -608,7 +810,7 @@ jobs:
                   printf "    }\n";
                   printf "  ]\n";
                   printf "}\n";
-              }' "$file" > "singbox/version1/$(basename "$file" ".list").json"
+              }' > "singbox/version1/$(basename "$file" ".list").json"
           done
 
           rm -f singbox/version1/*-resolve.json
@@ -715,6 +917,10 @@ jobs:
         run: |
           for file in meta/*.list; do
               awk -v filename="$(basename "$file" .list)" '{
+                  if ($0 ~ /^#/) {
+                      print;
+                      next;
+                  }
                   if ($0 ~ /^DOMAIN-REGEX,/ || $0 ~ /^PROCESS-NAME,/) {
                       next;
                   }
@@ -749,6 +955,10 @@ jobs:
                   if (found_no_resolve) print "no_resolve: true";
               }
               {
+                  if ($0 ~ /^#/) {
+                      print;
+                      next;
+                  }
                   if($1 == "DOMAIN-REGEX" && match($0, ",")){
                       $2 = substr($0, RSTART + 1);
                   }
@@ -781,6 +991,24 @@ jobs:
                   } else if ($1 == "IP-CIDR6") {
                       if (!cidr6++) print "ip_cidr6_set:";
                       print "- " $2;
+                  } else if ($1 == "IP-ASN") {
+                      if (!asn++) print "asn_set:";
+                      print "- " $2;
+                  } else if ($1 == "USER-AGENT") {
+                      if (!user_agent++) print "user_agent_set:";
+                      print "- " $2;
+                  } else if ($1 == "URL-REGEX") {
+                      if (!url_regex++) print "url_regex_set:";
+                      print "- " $2;
+                  } else if ($1 == "GEOIP") {
+                      if (!geoip++) print "geoip_set:";
+                      print "- " $2;
+                  } else if ($1 == "DEST-PORT") {
+                      if (!dest_port++) print "dest_port_set:";
+                      print "- " $2;
+                  } else if ($1 == "PROTOCOL") {
+                      if (!protocol++) print "protocol_set:";
+                      print "- " $2;
                   }
               }' "$file" > "egern/$(basename "$file" ".list").yaml"
           done
@@ -798,6 +1026,38 @@ jobs:
 
       - name: Move files to push directory
         run: |
+          source scripts/ruleset_metadata.sh
+
+          # Add provenance to generated text variants too. Binary formats keep
+          # their valid binary/JSON encoding and are linked through README.
+          for directory in meta/domain meta/ipcidr meta/classical stash/domain stash/ipcidr stash/classical; do
+              [[ -d "$directory" ]] || continue
+              for file in "$directory"/*.list; do
+                  [[ -f "$file" ]] || continue
+                  source_file="meta/$(basename "$file" .list).list.sources"
+                  if [[ "$directory" == */ipcidr && "$(basename "$file")" == "cn.list" ]]; then
+                      source_file="meta/cncidr.list.sources"
+                  fi
+                  add_metadata_header "$file" "$update_time" "$source_file"
+              done
+          done
+
+          for directory in surge shadowrocket quantumultx loon; do
+              for file in "$directory"/*.list; do
+                  [[ -f "$file" ]] || continue
+                  source_file="meta/$(basename "$file" .list).list.sources"
+                  add_metadata_header "$file" "$update_time" "$source_file"
+              done
+          done
+
+          for file in egern/*.yaml; do
+              [[ -f "$file" ]] || continue
+              source_file="meta/$(basename "$file" .yaml).list.sources"
+              add_metadata_header "$file" "$update_time" "$source_file"
+          done
+
+          find meta stash surge shadowrocket quantumultx loon egern -type f -name '*.sources' -delete
+
           cp -r singbox/ push/
           cp -r meta/ push/
           cp -r stash/ push/

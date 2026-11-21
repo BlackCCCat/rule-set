@@ -24,6 +24,9 @@ clash_domain_to_classical(){
 
 format_ruleset_no_cidr() {
     awk -F, '
+        /^IP-CIDR/ {
+            next;
+        }
         /^DOMAIN-REGEX/ {
             if (match($0, ",")) {
                 $2 = substr($0, RSTART + 1);
@@ -31,9 +34,16 @@ format_ruleset_no_cidr() {
             }
             next;
         }
+        /^IP-ASN/ {
+            print;
+            next;
+        }
         /^DOMAIN|^PROCESS-NAME/ {
             print $1 "," $2;
             next;
+        }
+        NF {
+            print;
         }
     ' "$1"
 }
@@ -202,6 +212,9 @@ ruleset_sort(){
         /^DOMAIN-REGEX,/    { print "4 " $0; next }
         /^IP-CIDR,/         { print "5 " $0; next }
         /^IP-CIDR6,/        { print "6 " $0; next }
-        /^PROCESS-NAME,/    { print "7 " $0; next }
+        /^IP-ASN,/          { print "7 " $0; next }
+        /^PROCESS-NAME,/    { print "8 " $0; next }
+        /^USER-AGENT,/      { print "9 " $0; next }
+        { print "10 " $0 }
     ' $1 | sort -k1,1n -k2,2 | cut -d' ' -f2-
 }

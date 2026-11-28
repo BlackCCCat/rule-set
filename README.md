@@ -8,7 +8,7 @@
 
 本仓库基于 [QuixoticHeart/rule-set](https://github.com/QuixoticHeart/rule-set) 维护，主要差异如下：
 
-- Surge 相关规则直接从各原始上游同步，并统一格式后合并。来源见 [Surge 上游清单](scripts/surge_sources.json)。
+- Surge 规则和 `mail` 的输入直接从原始上游下载，统一格式后再合并。每份输入的来源见 [Surge 上游清单](scripts/surge_sources.json)。
 - 新增 `media`、`mail`、`dns-cn`、`dns`、`apple_update` 规则，并将 Telegram 的域名、IP CIDR 和 ASN 规则合并为 `telegram`。
 - 生成的文本规则会在文件顶部标注更新时间和上游链接。
 - 生成结果通过本仓库的 `ruleset` 分支发布，规则链接指向本仓库。
@@ -22,6 +22,8 @@
 每天早上 7:30（北京时间 UTC+8）自动构建，保持规则最新
 
 支持注释的规则列表和 YAML 文件顶部会写入构建时间和实际使用的上游文件链接，便于核对来源。
+
+上游清单里的 `v2fly:<名称>` 对应 V2Fly 的 `data/<名称>`，构建时会展开其中引用的规则文件。查看某个发布规则的完整来源，以文件顶部的 `Sources` 为准。
 
 收集于互联网，面向 mihomo/clash.meta、surge、loon、stash、shadowrocket、quantumultx 和 egern 多个代理工具的定制 [规则集](https://github.com/BlackCCCat/rule-set/tree/ruleset)
 
@@ -142,11 +144,13 @@ egern/
     </tr>
     <tr>
       <td><code>apple-proxy</code></td>
-      <td>Apple 在中国大陆需要代理的规则列表
+      <td>Apple 在中国大陆需要代理的规则，另合并 Apple Intelligence 规则
       <br> 规则源:
-      <a href="https://github.com/Hackl0us/SS-Rule-Snippet">@Hackl0us/SS-Rule-Snippet</a>
-      <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
-      <a href="https://github.com/Elysian-Realme/FuGfConfig">@Elysian-Realme/FuGfConfig</a>
+      <a href="https://raw.githubusercontent.com/Elysian-Realme/FuGfConfig/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list">FuGfConfig · no-cn-cdn-domain.list</a>
+      <a href="https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/Apple-proxy.list">SS-Rule-Snippet · Apple-proxy.list</a>
+      <a href="https://ruleset.skk.moe/List/non_ip/apple_services.conf">SukkaW/Surge · apple_services.conf</a>
+      <a href="custom/apple-intelligence.list">本仓库 · Apple Intelligence</a>
+      <a href="https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple-intelligence.list">MetaCubeX · Apple Intelligence</a>
       </td>
     </tr>
     <tr>
@@ -334,7 +338,7 @@ egern/
     </tr>
     <tr>
       <td><code>gfw</code></td>
-      <td>被 GFW 屏蔽的域名列表
+      <td>被 GFW 屏蔽的域名，另从 ACL4SSR 的 ProxyGFWlist 提取 IPv4 和 IPv6 段
       <br> 规则源:
       <a href="https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/ProxyGFWlist.list">@ACL4SSR/ACL4SSR（IP 段）</a>
       <a href="https://github.com/Hackl0us/SS-Rule-Snippet">@Hackl0us/SS-Rule-Snippet</a>
@@ -499,7 +503,7 @@ egern/
     </tr>
     <tr>
       <td><code>proxy</code></td>
-      <td>国外需要代理的域名
+      <td>需要代理的境外域名和 IP 段，包含 <code>gfw</code> 的 IP 段
       <br> 规则源:
       <a href="https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/ProxyGFWlist.list">@ACL4SSR/ACL4SSR（IP 段）</a>
       <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
@@ -512,6 +516,7 @@ egern/
     <tr>
       <td><code>socialmedia-cn</code></td>
       <td>国内社交媒体规则集合 <br> 包含 NGA，XiaoHongShu，Weibo，Zhihu，DouBan，Coolapk
+      <br> 微博使用 <a href="https://github.com/v2fly/domain-list-community/blob/master/data/sina">V2Fly 的 sina 列表</a>
       <br> 规则源:
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>

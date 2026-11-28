@@ -1,0 +1,42 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/amazon.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/category-ecommerce.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/shopify.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Amazon.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Amazon.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Amazon.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Shopee.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Shopify.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/eBay.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Amazon.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Shopee.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Shopify.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/eBay.list
+# - https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Amazon.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/amazon
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/amazontrust
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/aws
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/aws-cn
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ebay
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/imdb
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kindle
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/primevideo
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/shopee
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/shopify
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/wholefoodsmarket
+13.32.0.0/15
+13.35.0.0/17
+18.184.0.0/15
+18.194.0.0/15
+18.208.0.0/13
+18.232.0.0/14
+52.200.0.0/13
+52.58.0.0/15
+52.74.0.0/16
+52.77.0.0/16
+52.84.0.0/15
+54.156.0.0/14
+54.226.0.0/15
+54.230.156.0/22
+54.93.0.0/16

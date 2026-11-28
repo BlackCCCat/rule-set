@@ -1,0 +1,42 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/spotify.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Spotify.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Spotify.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
+DOMAIN,audio4-ak-spotify-com.akamaized.net
+DOMAIN,cdn-spotify-experiments.conductrics.com
+DOMAIN,heads-ak-spotify-com.akamaized.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,byspotify.com
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,lifeatspotify.com
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spoti.fi
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,spotify.app.link
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spotify.com.edgesuite.net
+DOMAIN-SUFFIX,spotify.design
+DOMAIN-SUFFIX,spotify.link
+DOMAIN-SUFFIX,spotifycdn.com
+DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,spotifycharts.com
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotifyforbrands.com
+DOMAIN-SUFFIX,spotifyforvendors.com
+DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,spotilocal.com
+DOMAIN-SUFFIX,tospotify.com
+DOMAIN-KEYWORD,-spotify-
+DOMAIN-KEYWORD,-spotify-com
+DOMAIN-KEYWORD,spotify
+DOMAIN-KEYWORD,spotify.com
+IP-CIDR,35.186.224.47/32,no-resolve
+USER-AGENT,Spotify*

@@ -1,0 +1,15 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple-tvplus.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AppleTV.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-tvplus
+domain_set:
+- apple-tv-plus-press.apple.com
+- hls-amt.itunes.apple.com
+- hls.itunes.apple.com
+- np-edge.itunes.apple.com
+- play-edge.itunes.apple.com
+- tv.applemusic.com
+- uts-api.itunes.apple.com
+domain_suffix_set:
+- tv.apple.com

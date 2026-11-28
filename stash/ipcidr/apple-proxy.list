@@ -1,0 +1,8 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/apple-intelligence.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple-intelligence.list
+# - https://raw.githubusercontent.com/Elysian-Realme/FuGfConfig/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list
+# - https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/Apple-proxy.list
+# - https://ruleset.skk.moe/List/non_ip/apple_services.conf
+17.0.0.0/8

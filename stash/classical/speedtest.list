@@ -1,0 +1,23 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/speedtest.list
+# - https://github.com/LM-Firefly/Rules/raw/refs/heads/master/SpeedTest.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/category-speedtest.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/test-ipv6.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Speedtest.list
+# - https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Speedtest.yaml
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ookla-speedtest
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/speedtest
+# - https://ruleset.skk.moe/Clash/domainset/speedtest.txt
+# - https://ruleset.skk.moe/List/domainset/speedtest.conf
+DOMAIN-KEYWORD,ipv6-test
+DOMAIN-KEYWORD,ipv6test
+DOMAIN-KEYWORD,ookla
+DOMAIN-KEYWORD,speedtest
+DOMAIN-KEYWORD,test-ipv6
+DOMAIN-KEYWORD,testipv6
+PROCESS-NAME,Speedtest.exe
+PROCESS-NAME,org.zwanoo.android.speedtest
+USER-AGENT,SpeedTest*
+# IPv6 Test
+# network speed test

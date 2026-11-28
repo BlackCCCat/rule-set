@@ -1,0 +1,38 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geoip/classical/netflix.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetflixIP.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Netflix.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Netflix.list
+# - https://raw.githubusercontent.com/QiuSimons/Netflix_IP/master/getflix.txt
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/netflix
++.fast.com
++.flxvpn.net
++.netflix.ca
++.netflix.com
++.netflix.com.au
++.netflix.com.edgesuite.net
++.netflix.net
++.netflixdnstest0.com
++.netflixdnstest1.com
++.netflixdnstest10.com
++.netflixdnstest2.com
++.netflixdnstest3.com
++.netflixdnstest4.com
++.netflixdnstest5.com
++.netflixdnstest6.com
++.netflixdnstest7.com
++.netflixdnstest8.com
++.netflixdnstest9.com
++.netflixinvestor.com
++.netflixstudios.com
++.netflixtechblog.com
++.nflxext.com
++.nflximg.com
++.nflximg.net
++.nflxsearch.net
++.nflxso.net
++.nflxvideo.net
++.us-west-2.amazonaws.com

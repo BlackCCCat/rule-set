@@ -1,0 +1,34 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/dmm.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Dmm.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/DMM.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/DMM.list
+HOST-SUFFIX,akabeesoft2.com,dmm
+HOST-SUFFIX,akabeesoft3.com,dmm
+HOST-SUFFIX,akatsukiworks.com,dmm
+HOST-SUFFIX,alicesoft.com,dmm
+HOST-SUFFIX,api-p.videomarket.jp,dmm
+HOST-SUFFIX,bluekai.com,dmm
+HOST-SUFFIX,cosmiccute.com,dmm
+HOST-SUFFIX,ddo.jp,dmm
+HOST-SUFFIX,dmm-extension.com,dmm
+HOST-SUFFIX,dmm.co.jp,dmm
+HOST-SUFFIX,dmm.com,dmm
+HOST-SUFFIX,dmm.hk,dmm
+HOST-SUFFIX,dmmapis.com,dmm
+HOST-SUFFIX,dmmrex.com,dmm
+HOST-SUFFIX,fanza.jp,dmm
+HOST-SUFFIX,fout.jp,dmm
+HOST-SUFFIX,gmossp-sp.jp,dmm
+HOST-SUFFIX,hibiki-site.com,dmm
+HOST-SUFFIX,i-mobile.co.jp,dmm
+HOST-SUFFIX,im-apps.net,dmm
+HOST-SUFFIX,impact-ad.jp,dmm
+HOST-SUFFIX,ladsp.com,dmm
+HOST-SUFFIX,microad.co.jp,dmm
+HOST-SUFFIX,microad.jp,dmm
+HOST-SUFFIX,minori.ph,dmm
+HOST-SUFFIX,socdm.com,dmm
+HOST-SUFFIX,tenco.cc,dmm
+HOST-SUFFIX,wheel-soft.com,dmm

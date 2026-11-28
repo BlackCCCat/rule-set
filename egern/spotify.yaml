@@ -1,0 +1,48 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/spotify.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Spotify.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Spotify.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
+no_resolve: true
+domain_set:
+- audio4-ak-spotify-com.akamaized.net
+- cdn-spotify-experiments.conductrics.com
+- heads-ak-spotify-com.akamaized.net
+- spotify.map.fastly.net
+- spotify.map.fastlylb.net
+domain_suffix_set:
+- audio-ak-spotify-com.akamaized.net
+- byspotify.com
+- heads4-ak-spotify-com.akamaized.net
+- lifeatspotify.com
+- pscdn.co
+- scdn.co
+- spoti.fi
+- spotify-com.akamaized.net
+- spotify-everywhere.com
+- spotify.app.link
+- spotify.com
+- spotify.com.edgesuite.net
+- spotify.design
+- spotify.link
+- spotifycdn.com
+- spotifycdn.net
+- spotifycharts.com
+- spotifycodes.com
+- spotifyforbrands.com
+- spotifyforvendors.com
+- spotifyjobs.com
+- spotilocal.com
+- tospotify.com
+domain_keyword_set:
+- -spotify-
+- -spotify-com
+- spotify
+- spotify.com
+ip_cidr_set:
+- 35.186.224.47/32
+user_agent_set:
+- Spotify*

@@ -1,0 +1,13 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/bahamut.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bahamut.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Bahamut.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bahamut
+HOST,gamer-cds.cdn.hinet.net,bahamut
+HOST,gamer2-cds.cdn.hinet.net,bahamut
+HOST-SUFFIX,bahamut.akamaized.net,bahamut
+HOST-SUFFIX,bahamut.com.tw,bahamut
+HOST-SUFFIX,gamer.com.tw,bahamut
+USER-AGENT,Anime*,bahamut

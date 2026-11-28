@@ -1,0 +1,31 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/abema.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/AbemaTV.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AbemaTV.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/AbemaTV.list
+HOST-SUFFIX,abema-tv.com,abema
+HOST-SUFFIX,abema.io,abema
+HOST-SUFFIX,abema.tv,abema
+HOST-SUFFIX,abematv.akamaized.net,abema
+HOST-SUFFIX,abematv.co.jp,abema
+HOST-SUFFIX,adx.promo,abema
+HOST-SUFFIX,ameba.jp,abema
+HOST-SUFFIX,amebame.com,abema
+HOST-SUFFIX,amebaownd.com,abema
+HOST-SUFFIX,amebaowndme.com,abema
+HOST-SUFFIX,ameblo.jp,abema
+HOST-SUFFIX,bucketeer.jp,abema
+HOST-SUFFIX,d1otoma47x30pg.cloudfront.net,abema
+HOST-SUFFIX,d2wy8f7a9ursnm.cloudfront.net,abema
+HOST-SUFFIX,dokusho-ojikan.jp,abema
+HOST-SUFFIX,ds-linear-abematv.akamaized.net,abema
+HOST-SUFFIX,ds-vod-abematv.akamaized.net,abema
+HOST-SUFFIX,hayabusa.dev,abema
+HOST-SUFFIX,hayabusa.io,abema
+HOST-SUFFIX,hayabusa.media,abema
+HOST-SUFFIX,linear-abematv.akamaized.net,abema
+HOST-SUFFIX,vod-abematv.akamaized.net,abema
+HOST-SUFFIX,winticket.jp,abema
+HOST-KEYWORD,abematv.akamaized.net,abema
+USER-AGENT,AbemaTV*,abema

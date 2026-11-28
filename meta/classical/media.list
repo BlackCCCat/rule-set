@@ -1,0 +1,76 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geoip/classical/netflix.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/disney.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/hbo.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/primevideo.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/tiktok.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/twitch.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/youtube.list
+# - https://github.com/jmdugan/blocklists/raw/refs/heads/master/corporations/tiktok/all
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/HBO.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/HBO.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetflixIP.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/TikTok.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitch.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Netflix.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/YouTube.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Twitch.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Disney.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/HBO.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Netflix.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/TikTok.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/YouTube.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Twitch.list
+# - https://raw.githubusercontent.com/QiuSimons/Netflix_IP/master/getflix.txt
+# - https://raw.githubusercontent.com/Semporia/Quantumult-X/master/Filter/TikTok.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/abc
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bamtech
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/disney
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/espn
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hbo
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hotstar
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hulu
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/marvel
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nationalgeographic
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/netflix
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/primevideo
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/starplus
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tiktok
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/twitch
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/youtube
+DOMAIN-KEYWORD,-tiktokcdn-com
+DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
+DOMAIN-KEYWORD,dualstack.apiproxy-
+DOMAIN-KEYWORD,dualstack.ichnaea-web-
+DOMAIN-KEYWORD,musical.ly
+DOMAIN-KEYWORD,netflixdnstest
+DOMAIN-KEYWORD,tiktok
+DOMAIN-KEYWORD,tiktokcdn
+DOMAIN-KEYWORD,ttvnw
+DOMAIN-KEYWORD,youtube
+DOMAIN-WILDCARD,netflixdnstest*.com
+DOMAIN-WILDCARD,youtube.*
+DOMAIN-WILDCARD,youtube.*.*
+DOMAIN-WILDCARD,youtube.com.*
+DOMAIN-REGEX,(^|\.)apiproxy-device-prod-nlb-.+\.amazonaws\.com$
+DOMAIN-REGEX,(^|\.)apiproxy-website-nlb-prod-.+\.amazonaws\.com$
+DOMAIN-REGEX,(^|\.)dualstack\.apiproxy-.+\.amazonaws\.com$
+DOMAIN-REGEX,(^|\.)dualstack\.ichnaea-web-.+\.amazonaws\.com$
+DOMAIN-REGEX,^hses[1-7]?\.akamaized\.net$
+PROCESS-NAME,com.disney.datg.videoplatforms.android.abc
+PROCESS-NAME,com.disney.disneyplus
+PROCESS-NAME,com.hbo.hbonow
+PROCESS-NAME,com.netflix.mediaclient
+PROCESS-NAME,com.zhiliaoapp.musically
+PROCESS-NAME,tv.twitch.android.app
+USER-AGENT,*youtube*
+USER-AGENT,Argo*
+USER-AGENT,HBO%20NOW*
+USER-AGENT,HBOMAX*
+USER-AGENT,TikTok*
+USER-AGENT,YouTube*

@@ -1,0 +1,16 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/bilibili.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic-Services/BiliBili.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bilibili
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bilibili-cdn
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bilibili-game
+106.75.74.76/32
+111.206.25.147/32
+119.3.238.64/32
+120.92.108.182/32
+120.92.113.99/32
+120.92.153.217/32
+134.175.207.130/32

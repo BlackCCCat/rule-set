@@ -1,0 +1,41 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/apple-intelligence.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple-intelligence.list
+# - https://raw.githubusercontent.com/Elysian-Realme/FuGfConfig/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list
+# - https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/Apple-proxy.list
+# - https://ruleset.skk.moe/List/non_ip/apple_services.conf
+no_resolve: true
+domain_set:
+- apple-relay.cloudflare.com
+- apple-relay.fastly-edge.com
+- apple.comscoreresearch.com
+- cp4.cloudflare.com
+- tv.applemusic.com
+domain_suffix_set:
+- aaplimg.com
+- apple-cloudkit.com
+- apple-dns.net
+- apple-mapkit.com
+- apple.co
+- apple.com
+- apple.news
+- appsto.re
+- appstore.com
+- cdn-apple.com
+- digicert.com
+- icloud-content.com
+- icloud.com
+- itunes.com
+- me.com
+- organicfruitapps.com
+- push-apple.com.akadns.net
+- safebrowsing.apple
+ip_cidr_set:
+- 17.0.0.0/8
+user_agent_set:
+- AppleNews*
+- AppleTV*
+- com.apple.news*
+- com.apple.trustd*
+- com.apple.tv*

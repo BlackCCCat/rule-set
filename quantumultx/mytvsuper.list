@@ -1,0 +1,11 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/mytvsuper.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/MyTVSuper.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/mytvsuper
+HOST,mytvsuperlimited.hb.omtrdc.net,mytvsuper
+HOST,mytvsuperlimited.sc.omtrdc.net,mytvsuper
+HOST-SUFFIX,mytvsuper.com,mytvsuper
+HOST-SUFFIX,tvb.com,mytvsuper
+HOST-KEYWORD,nowtv100,mytvsuper
+HOST-KEYWORD,rthklive,mytvsuper

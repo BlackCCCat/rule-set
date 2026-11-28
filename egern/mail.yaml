@@ -1,0 +1,87 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Google.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Mailru.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Protonmail.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Mailru.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Protonmail.list
+# - https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt
+# - https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/google.txt
+# - https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Microsoft.yaml
+# - https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Google.list
+# - https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Microsoft.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/android
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/azure
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bethesda
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bing
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/blogspot
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/dart
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/dzen
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/fastlane
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/firebase
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/flickr
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/flutter
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/forza
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/github
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/github-copilot
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/golang
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-play
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-registry
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-scholar
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-trust-services
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/googlefcm
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kaggle
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/mailcom
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/mailru
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/mailru-group
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft-dev
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft-pki
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/mojang
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/msn
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/npmjs
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ok
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/onedrive
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/opensourceinsights
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/polymer
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/protonmail
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spacemail
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/temp-mail
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/v8
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/vk
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/xbox
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/yahoo
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/youtube
+domain_suffix_set:
+- gmail
+- gmail.com
+- googlemail.com
+- hotmail
+- hotmail.co
+- hotmail.com
+- hotmail.eu
+- hotmail.net
+- hotmail.org
+- mail.com
+- mail.ru
+- outlook.cn
+- outlook.com
+- protonmail.ch
+- protonmail.com
+- redirector.c.mail.google.com
+- spacemail.com
+- tech-mail.ru
+- temp-mail.org
+- ymail.com
+domain_keyword_set:
+- gmail
+- hotmail
+- outlook

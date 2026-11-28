@@ -1,0 +1,36 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/apple-intelligence.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple-intelligence.list
+# - https://raw.githubusercontent.com/Elysian-Realme/FuGfConfig/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list
+# - https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/Apple-proxy.list
+# - https://ruleset.skk.moe/List/non_ip/apple_services.conf
+HOST,apple-relay.cloudflare.com,apple-proxy
+HOST,apple-relay.fastly-edge.com,apple-proxy
+HOST,apple.comscoreresearch.com,apple-proxy
+HOST,cp4.cloudflare.com,apple-proxy
+HOST,tv.applemusic.com,apple-proxy
+HOST-SUFFIX,aaplimg.com,apple-proxy
+HOST-SUFFIX,apple-cloudkit.com,apple-proxy
+HOST-SUFFIX,apple-dns.net,apple-proxy
+HOST-SUFFIX,apple-mapkit.com,apple-proxy
+HOST-SUFFIX,apple.co,apple-proxy
+HOST-SUFFIX,apple.com,apple-proxy
+HOST-SUFFIX,apple.news,apple-proxy
+HOST-SUFFIX,appsto.re,apple-proxy
+HOST-SUFFIX,appstore.com,apple-proxy
+HOST-SUFFIX,cdn-apple.com,apple-proxy
+HOST-SUFFIX,digicert.com,apple-proxy
+HOST-SUFFIX,icloud-content.com,apple-proxy
+HOST-SUFFIX,icloud.com,apple-proxy
+HOST-SUFFIX,itunes.com,apple-proxy
+HOST-SUFFIX,me.com,apple-proxy
+HOST-SUFFIX,organicfruitapps.com,apple-proxy
+HOST-SUFFIX,push-apple.com.akadns.net,apple-proxy
+HOST-SUFFIX,safebrowsing.apple,apple-proxy
+IP-CIDR,17.0.0.0/8,apple-proxy
+USER-AGENT,AppleNews*,apple-proxy
+USER-AGENT,AppleTV*,apple-proxy
+USER-AGENT,com.apple.news*,apple-proxy
+USER-AGENT,com.apple.trustd*,apple-proxy
+USER-AGENT,com.apple.tv*,apple-proxy

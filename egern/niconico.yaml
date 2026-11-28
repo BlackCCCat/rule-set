@@ -1,0 +1,20 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/niconico.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Niconico.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Niconico.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/niconico
+domain_suffix_set:
+- nico
+- nico.ms
+- nicochannel.jp
+- nicodic.jp
+- nicomanga.jp
+- niconico.com
+- nicoseiga.jp
+- nicovideo.jp
+- nimg.jp
+- simg.jp
+- socdm.com
+user_agent_set:
+- Niconico*

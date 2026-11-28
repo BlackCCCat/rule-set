@@ -1,0 +1,34 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/onedrive.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/onedrive
+domain_suffix_set:
+- 1drv.com
+- 1drv.ms
+- livefilestore.com
+- microsoftpersonalcontent.com
+- oneclient.sfx.ms
+- onedrive
+- onedrive.co
+- onedrive.co.uk
+- onedrive.com
+- onedrive.eu
+- onedrive.live.com
+- onedrive.net
+- onedrive.org
+- onedriveupdater
+- photos.live.com
+- sharepoint.cn
+- sharepoint.com
+- sharepointonline.com
+- skydrive.wns.windows.com
+- spoprod-a.akamaihd.net
+- storage.live.com
+- storage.msn.com
+domain_keyword_set:
+- 1drv
+- onedrive
+- skydrive

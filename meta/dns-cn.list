@@ -1,0 +1,7 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ChinaDNS.list
+DOMAIN-SUFFIX,dns.alidns.com
+DOMAIN-SUFFIX,doh.360.cn
+DOMAIN-SUFFIX,doh.pub
+IP-CIDR,1.12.12.12/32,no-resolve

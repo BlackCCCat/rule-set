@@ -1,0 +1,12 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/apple_update.list
+DOMAIN,appldnld.apple.com
+DOMAIN,gdmf.apple.com
+DOMAIN,mesu.apple.com
+DOMAIN,ns.itunes.apple.com
+DOMAIN,xp.apple.com
+DOMAIN-SUFFIX,ads.internal.unity3d.com
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com
+DOMAIN-SUFFIX,iadsdk.apple.com
+DOMAIN-SUFFIX,unityads.unity3d.com

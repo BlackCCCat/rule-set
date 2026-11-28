@@ -1,0 +1,13 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://core.telegram.org/resources/cidr.txt
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geoip/classical/telegram.list
+# - https://github.com/SukkaW/Surge
+# - https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/ip/telegram_asn.conf
+# - https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/non_ip/telegram.conf
+# - https://ruleset.skk.moe/List/ip/telegram.conf
+IP-ASN,211157
+IP-ASN,44907
+IP-ASN,59930
+IP-ASN,62014
+IP-ASN,62041

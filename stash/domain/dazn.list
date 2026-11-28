@@ -1,0 +1,26 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/dazn.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DAZN.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/DAZN.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/dazn
++.control.kochava.com
++.d151l6v8er5bdm.cloudfront.net
++.d1sgwhnao7452x.cloudfront.net
++.dazn-api.com
++.dazn.com
++.dazndn.com
++.daznfeeds.com
++.daznplayer.com
++.daznservices.com
++.dc2-vodhls-perform.secure.footprint.net
++.dca-ll-livedazn-dznlivejp.s.llnwi.net
++.dca-ll-voddazn-dznvodjp.s.llnwi.net
++.dcalivedazn.akamaized.net
++.dcblivedazn.akamaized.net
++.indazn.com
++.indaznlab.com
++.intercom.io
++.logx.optimizely.com
++.s.yimg.jp
++.sentry.io

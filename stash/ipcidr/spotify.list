@@ -1,0 +1,9 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/spotify.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Spotify.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Spotify.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
+35.186.224.47/32

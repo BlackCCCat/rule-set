@@ -1,0 +1,6 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/apns.list
+identity.apple.com
++.akadns.net
++.push.apple.com

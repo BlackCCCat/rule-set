@@ -1,0 +1,34 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/dmm.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Dmm.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/DMM.yaml
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/DMM.list
++.akabeesoft2.com
++.akabeesoft3.com
++.akatsukiworks.com
++.alicesoft.com
++.api-p.videomarket.jp
++.bluekai.com
++.cosmiccute.com
++.ddo.jp
++.dmm-extension.com
++.dmm.co.jp
++.dmm.com
++.dmm.hk
++.dmmapis.com
++.dmmrex.com
++.fanza.jp
++.fout.jp
++.gmossp-sp.jp
++.hibiki-site.com
++.i-mobile.co.jp
++.im-apps.net
++.impact-ad.jp
++.ladsp.com
++.microad.co.jp
++.microad.jp
++.minori.ph
++.socdm.com
++.tenco.cc
++.wheel-soft.com

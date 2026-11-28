@@ -1,0 +1,42 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/spotify.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Spotify.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Spotify.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/spotify
+HOST,audio4-ak-spotify-com.akamaized.net,spotify
+HOST,cdn-spotify-experiments.conductrics.com,spotify
+HOST,heads-ak-spotify-com.akamaized.net,spotify
+HOST,spotify.map.fastly.net,spotify
+HOST,spotify.map.fastlylb.net,spotify
+HOST-SUFFIX,audio-ak-spotify-com.akamaized.net,spotify
+HOST-SUFFIX,byspotify.com,spotify
+HOST-SUFFIX,heads4-ak-spotify-com.akamaized.net,spotify
+HOST-SUFFIX,lifeatspotify.com,spotify
+HOST-SUFFIX,pscdn.co,spotify
+HOST-SUFFIX,scdn.co,spotify
+HOST-SUFFIX,spoti.fi,spotify
+HOST-SUFFIX,spotify-com.akamaized.net,spotify
+HOST-SUFFIX,spotify-everywhere.com,spotify
+HOST-SUFFIX,spotify.app.link,spotify
+HOST-SUFFIX,spotify.com,spotify
+HOST-SUFFIX,spotify.com.edgesuite.net,spotify
+HOST-SUFFIX,spotify.design,spotify
+HOST-SUFFIX,spotify.link,spotify
+HOST-SUFFIX,spotifycdn.com,spotify
+HOST-SUFFIX,spotifycdn.net,spotify
+HOST-SUFFIX,spotifycharts.com,spotify
+HOST-SUFFIX,spotifycodes.com,spotify
+HOST-SUFFIX,spotifyforbrands.com,spotify
+HOST-SUFFIX,spotifyforvendors.com,spotify
+HOST-SUFFIX,spotifyjobs.com,spotify
+HOST-SUFFIX,spotilocal.com,spotify
+HOST-SUFFIX,tospotify.com,spotify
+HOST-KEYWORD,-spotify-,spotify
+HOST-KEYWORD,-spotify-com,spotify
+HOST-KEYWORD,spotify,spotify
+HOST-KEYWORD,spotify.com,spotify
+IP-CIDR,35.186.224.47/32,spotify
+USER-AGENT,Spotify*,spotify

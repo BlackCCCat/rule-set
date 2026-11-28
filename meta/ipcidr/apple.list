@@ -1,0 +1,42 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/apple-intelligence.list
+# - https://github.com/BlackCCCat/rule-set/tree/master/custom/apple.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple-intelligence.list
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/apple.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Apple.list
+# - https://raw.githubusercontent.com/Elysian-Realme/FuGfConfig/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Apple.list
+# - https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/Apple-proxy.list
+# - https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt
+# - https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/apple.txt
+# - https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Apple.yaml
+# - https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Apple.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-dev
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-music
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-pki
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-podcasts
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-tvplus
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-update
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/beats
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/icloud
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/icloudprivaterelay
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/itunes
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/swift
+# - https://ruleset.skk.moe/List/non_ip/apple_services.conf
+139.178.128.0/18
+144.178.0.0/19
+144.178.36.0/22
+144.178.48.0/20
+17.0.0.0/8
+192.35.50.0/24
+198.183.17.0/24
+205.180.175.0/24
+63.92.224.0/19
+65.199.22.0/23
+2403:300::/32
+2620:149::/32
+2a01:b740::/32
+2a01:b747::/32

@@ -1,0 +1,11 @@
+# Updated: 2026-11-28 13:08:48 (UTC+8)
+# Sources:
+# - https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/classical/youtube.list
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+# - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+# - https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/YouTube.list
+# - https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/YouTube.list
+# - https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/youtube
+172.110.32.0/21
+216.73.80.0/20
+2620:120:e000::/40

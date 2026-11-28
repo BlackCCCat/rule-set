@@ -8,7 +8,7 @@
 
 本仓库基于 [QuixoticHeart/rule-set](https://github.com/QuixoticHeart/rule-set) 维护，主要差异如下：
 
-- 原由 [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) 提供的 Surge 规则改由 [magical404/MagicRule](https://github.com/magical404/MagicRule) 提供。
+- Surge 相关规则直接从各原始上游同步，并统一格式后合并。来源见 [Surge 上游清单](scripts/surge_sources.json)。
 - 新增 `media`、`mail`、`dns-cn`、`dns`、`apple_update` 规则，并将 Telegram 的域名、IP CIDR 和 ASN 规则合并为 `telegram`。
 - 生成的文本规则会在文件顶部标注更新时间和上游链接。
 - 生成结果通过本仓库的 `ruleset` 分支发布，规则链接指向本仓库。
@@ -21,7 +21,7 @@
 
 每天早上 7:30（北京时间 UTC+8）自动构建，保持规则最新
 
-规则从各自上游同步；原由 [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) 提供的 Surge 规则改由 [MagicRule 的 Surge 产物索引](https://github.com/magical404/MagicRule) 获取。支持注释的规则列表和 YAML 文件顶部会写入构建时间和上游链接，便于核对来源。
+支持注释的规则列表和 YAML 文件顶部会写入构建时间和实际使用的上游文件链接，便于核对来源。
 
 收集于互联网，面向 mihomo/clash.meta、surge、loon、stash、shadowrocket、quantumultx 和 egern 多个代理工具的定制 [规则集](https://github.com/BlackCCCat/rule-set/tree/ruleset)
 
@@ -96,7 +96,8 @@ egern/
       <td><code>abema</code></td>
       <td>abema 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -143,7 +144,8 @@ egern/
       <td><code>apple-proxy</code></td>
       <td>Apple 在中国大陆需要代理的规则列表
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/Hackl0us/SS-Rule-Snippet">@Hackl0us/SS-Rule-Snippet</a>
+      <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
       <a href="https://github.com/Elysian-Realme/FuGfConfig">@Elysian-Realme/FuGfConfig</a>
       </td>
     </tr>
@@ -151,7 +153,8 @@ egern/
       <td><code>apple-tv</code></td>
       <td>Apple TV 流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -159,7 +162,14 @@ egern/
       <td><code>apple</code></td>
       <td>Apple 服务
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
+      <a href="https://github.com/Loyalsoldier/surge-rules">@Loyalsoldier/surge-rules</a>
+      <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -167,7 +177,9 @@ egern/
       <td><code>bahamut</code></td>
       <td>巴哈姆特动漫
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -175,7 +187,9 @@ egern/
       <td><code>bilibili</code></td>
       <td>哔哩哔哩动漫
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -213,7 +227,7 @@ egern/
       <td><code>crypto</code></td>
       <td> 加密货币相关规则 <br> 包含 Binance，OKX，Bybit，Bitget 等常见交易所
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
       </td>
@@ -222,7 +236,9 @@ egern/
       <td><code>dazn</code></td>
       <td>DAZN 体育流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -230,7 +246,8 @@ egern/
       <td><code>disney</code></td>
       <td>迪士尼 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -241,7 +258,8 @@ egern/
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       <a href="https://github.com/XIU2/TrackersListCollection">@XIU2/TrackersListCollection</a>
       <a href="https://github.com/ngosang/trackerslist">@ngosang/trackerslist</a>
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/NobyDa/Script">@NobyDa/Script</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
       </td>
@@ -250,7 +268,8 @@ egern/
       <td><code>dmm</code></td>
       <td>DMM 在线内容提供商
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -259,14 +278,18 @@ egern/
       <td>抖音短视频平台
       <br> 规则源:
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       </td>
     </tr>
     <tr>
       <td><code>ecommerce</code></td>
       <td>电子商务平台 <br> 包含 Amazon，eBay，Shopee，Shopify 等
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -283,7 +306,9 @@ egern/
       <td>国外常见论坛平台
       <br> 包括 Reddit，V2EX，Quora，PTT，4chan 等
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -291,7 +316,8 @@ egern/
       <td><code>games-cn</code></td>
       <td>游戏平台、游戏下载在中国大陆可直连的规则列表
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -299,7 +325,9 @@ egern/
       <td><code>games</code></td>
       <td>游戏平台、游戏下载规则列表
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
       </td>
@@ -308,7 +336,11 @@ egern/
       <td><code>gfw</code></td>
       <td>被 GFW 屏蔽的域名列表
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/ProxyGFWlist.list">@ACL4SSR/ACL4SSR（IP 段）</a>
+      <a href="https://github.com/Hackl0us/SS-Rule-Snippet">@Hackl0us/SS-Rule-Snippet</a>
+      <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
+      <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -316,7 +348,9 @@ egern/
       <td><code>gits</code></td>
       <td>Git仓库规则集合 <br> 包含 GitHub，GitLab，Gitee，GitBook
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -324,7 +358,12 @@ egern/
       <td><code>google</code></td>
       <td> Google 谷歌服务
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
+      <a href="https://github.com/Loyalsoldier/surge-rules">@Loyalsoldier/surge-rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -332,7 +371,9 @@ egern/
       <td><code>googlefcm</code></td>
       <td>Google Firebase Cloud Messaging 谷歌推送服务
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -340,7 +381,9 @@ egern/
       <td><code>hbo</code></td>
       <td>HBO 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -357,7 +400,9 @@ egern/
       <td><code>hulu</code></td>
       <td>Hulu 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -372,7 +417,10 @@ egern/
       <td><code>microsoft</code></td>
       <td>Microsoft 微软服务
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -380,7 +428,8 @@ egern/
       <td><code>mytvsuper</code></td>
       <td>MyTV SUPER 在线视频点播服务平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -388,7 +437,11 @@ egern/
       <td><code>netflix</code></td>
       <td>Netflix 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/QiuSimons/Netflix_IP">@QiuSimons/Netflix_IP</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -396,7 +449,9 @@ egern/
       <td><code>niconico</code></td>
       <td>Niconico 视频网站
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -404,7 +459,8 @@ egern/
       <td><code>onedrive</code></td>
       <td>OneDrive 网盘
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -412,7 +468,11 @@ egern/
       <td><code>paypal</code></td>
       <td>PayPal 在线支付与转账平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -420,7 +480,7 @@ egern/
       <td><code>primevideo</code></td>
       <td>PrimeVideo 视频流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -428,7 +488,12 @@ egern/
       <td><code>private</code></td>
       <td>私有网络地址
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
+      <a href="https://github.com/Loyalsoldier/surge-rules">@Loyalsoldier/surge-rules</a>
+      <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -436,8 +501,11 @@ egern/
       <td><code>proxy</code></td>
       <td>国外需要代理的域名
       <br> 规则源:
+      <a href="https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/ProxyGFWlist.list">@ACL4SSR/ACL4SSR（IP 段）</a>
       <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/Hackl0us/SS-Rule-Snippet">@Hackl0us/SS-Rule-Snippet</a>
+      <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
       <a href="https://github.com/Loyalsoldier/v2ray-rules-dat">@Loyalsoldier/v2ray-rules-dat</a>
       </td>
     </tr>
@@ -445,7 +513,8 @@ egern/
       <td><code>socialmedia-cn</code></td>
       <td>国内社交媒体规则集合 <br> 包含 NGA，XiaoHongShu，Weibo，Zhihu，DouBan，Coolapk
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -453,7 +522,12 @@ egern/
       <td><code>socialmedia</code></td>
       <td>国外社交媒体规则集合 <br> 包含 Discord，Whatsapp，Line，Instagram，Facebook，Telegram，Twitter，Signal 等
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/Hackl0us/SS-Rule-Snippet">@Hackl0us/SS-Rule-Snippet</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/tkzc11/QX-Rules">@tkzc11/QX-Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -463,7 +537,9 @@ egern/
       <br> 规则源:
       <a href="https://github.com/SukkaW/Surge">@SukkaW/Surge</a>
       <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -471,7 +547,10 @@ egern/
       <td><code>spotify</code></td>
       <td>Spotify 音乐流媒体平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -487,7 +566,10 @@ egern/
       <td><code>tiktok</code></td>
       <td>TikTok 短视频平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/Semporia/Quantumult-X">@Semporia/Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       <a href="https://github.com/jmdugan/blocklists">@jmdugan/blocklists</a>
       </td>
@@ -503,7 +585,9 @@ egern/
       <td><code>twitch</code></td>
       <td>Twitch 直播平台
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -511,7 +595,10 @@ egern/
       <td><code>youtube</code></td>
       <td>YouTube 视频网站
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
@@ -519,15 +606,26 @@ egern/
       <td><code>media</code></td>
       <td>YouTube、Netflix、Disney、PrimeVideo、HBO、Twitch 和 TikTok 的合并去重规则，适用于 Surge 的 <code>OR</code> 组合匹配
       <br> 规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/GeQ1an/Rules">@GeQ1an/Rules</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/QiuSimons/Netflix_IP">@QiuSimons/Netflix_IP</a>
+      <a href="https://github.com/Semporia/Quantumult-X">@Semporia/Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       <a href="https://github.com/MetaCubeX/meta-rules-dat">@MetaCubeX/meta-rules-dat</a>
       </td>
     </tr>
     <tr>
       <td><code>mail</code></td>
-      <td>MagicRule 的邮箱服务规则与 Google、Microsoft、Yahoo 规则中邮件相关域名的合并去重结果
+      <td>从各上游的邮箱服务规则，以及 Google、Microsoft、Yahoo 规则中提取邮件相关域名并去重
       <br>规则源:
-      <a href="https://github.com/magical404/MagicRule">@magical404/MagicRule</a>
+      <a href="https://github.com/ACL4SSR/ACL4SSR">@ACL4SSR/ACL4SSR</a>
+      <a href="https://github.com/dler-io/Rules">@dler-io/Rules</a>
+      <a href="https://github.com/LM-Firefly/Rules">@LM-Firefly/Rules</a>
+      <a href="https://github.com/Loyalsoldier/clash-rules">@Loyalsoldier/clash-rules</a>
+      <a href="https://github.com/Loyalsoldier/surge-rules">@Loyalsoldier/surge-rules</a>
+      <a href="https://github.com/sve1r/Rules-For-Quantumult-X">@sve1r/Rules-For-Quantumult-X</a>
+      <a href="https://github.com/v2fly/domain-list-community">@v2fly/domain-list-community</a>
       </td>
     </tr>
     <tr>
@@ -1786,7 +1884,17 @@ egern/
 
 **向提供数据来源的作者们表示真诚的感谢**
 
-- [@magical404/MagicRule](https://github.com/magical404/MagicRule)
+- [@dler-io/Rules](https://github.com/dler-io/Rules)
+- [@GeQ1an/Rules](https://github.com/GeQ1an/Rules)
+- [@Hackl0us/SS-Rule-Snippet](https://github.com/Hackl0us/SS-Rule-Snippet)
+- [@Loyalsoldier/surge-rules](https://github.com/Loyalsoldier/surge-rules)
+- [@NobyDa/Script](https://github.com/NobyDa/Script)
+- [@QiuSimons/Netflix_IP](https://github.com/QiuSimons/Netflix_IP)
+- [@Semporia/Quantumult-X](https://github.com/Semporia/Quantumult-X)
+- [@sve1r/Rules-For-Quantumult-X](https://github.com/sve1r/Rules-For-Quantumult-X)
+- [@tkzc11/QX-Rules](https://github.com/tkzc11/QX-Rules)
+- [@v2fly/domain-list-community](https://github.com/v2fly/domain-list-community)
+
 - [@MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)
 - [@felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
 - [@Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)

@@ -1,0 +1,347 @@
+{
+  "surge": {
+    "Abema": [
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/AbemaTV.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AbemaTV.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/AbemaTV.list"
+    ],
+    "Amazon": [
+      "v2fly:amazon",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Amazon.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Amazon.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Amazon.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Amazon.list",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Amazon.list"
+    ],
+    "Apple": [
+      "v2fly:apple",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Apple.list",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Apple.list",
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt",
+      "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/apple.txt",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Apple.yaml",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Apple.list",
+      "https://ruleset.skk.moe/List/non_ip/apple_services.conf"
+    ],
+    "AppleProxy": [
+      "https://raw.githubusercontent.com/Elysian-Realme/FuGfConfig/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list",
+      "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/Apple-proxy.list",
+      "https://ruleset.skk.moe/List/non_ip/apple_services.conf"
+    ],
+    "AppleTV": [
+      "v2fly:apple-tvplus",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AppleTV.list"
+    ],
+    "Bahamut": [
+      "v2fly:bahamut",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bahamut.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Bahamut.list"
+    ],
+    "BiliBili": [
+      "v2fly:bilibili",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic-Services/BiliBili.list"
+    ],
+    "Coolapk": [
+      "v2fly:coolapk"
+    ],
+    "Crypto": [
+      "v2fly:category-cryptocurrency"
+    ],
+    "Cryptocurrency": [
+      "v2fly:category-cryptocurrency"
+    ],
+    "DAZN": [
+      "v2fly:dazn",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/DAZN.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/DAZN.list"
+    ],
+    "DMM": [
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Dmm.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/DMM.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/DMM.list"
+    ],
+    "Discord": [
+      "v2fly:discord",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Discord.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Discord.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Discord.list"
+    ],
+    "Disney": [
+      "v2fly:disney",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Disney.list"
+    ],
+    "DouBan": [
+      "v2fly:douban",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic-Services/DouBan.list"
+    ],
+    "DouYin": [
+      "v2fly:douyin",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Douyin.yaml"
+    ],
+    "Download": [
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Download.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Download.list",
+      "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Download.list"
+    ],
+    "Facebook": [
+      "v2fly:facebook",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Facebook.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Facebook.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/SNS/Facebook.list",
+      "https://raw.githubusercontent.com/tkzc11/QX-Rules/main/Meta.list"
+    ],
+    "GFW": [
+      "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/foreign.list",
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Region/Global.list",
+      "https://ruleset.skk.moe/List/domainset/cdn.conf",
+      "https://ruleset.skk.moe/List/non_ip/apple_services.conf",
+      "https://ruleset.skk.moe/List/non_ip/cdn.conf",
+      "https://ruleset.skk.moe/List/non_ip/global.conf",
+      "https://ruleset.skk.moe/List/non_ip/microsoft.conf"
+    ],
+    "Game": [
+      "v2fly:category-games",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Games/GamesAll.list"
+    ],
+    "GameDownload": [
+      "v2fly:category-game-platforms-download",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GameDownload.list"
+    ],
+    "GameDownloadCN": [
+      "v2fly:category-games-cn"
+    ],
+    "GitBook": [
+      "v2fly:gitbook",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Gitbook.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Gitbook.list"
+    ],
+    "GitHub": [
+      "v2fly:github",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Github.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Github.list"
+    ],
+    "GitLab": [
+      "v2fly:gitlab",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Gitlab.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Gitlab.list"
+    ],
+    "Gitee": [
+      "v2fly:gitee"
+    ],
+    "Google": [
+      "v2fly:google",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Google.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list",
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt",
+      "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/google.txt",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Google.list"
+    ],
+    "GoogleFCM": [
+      "v2fly:googlefcm",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Google%20FCM.yaml"
+    ],
+    "HBO": [
+      "v2fly:hbo",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/HBO.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/HBO.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/HBO.list"
+    ],
+    "Hulu": [
+      "v2fly:hulu",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Hulu.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Hulu.list"
+    ],
+    "Instagram": [
+      "v2fly:instagram",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Instagram.list"
+    ],
+    "Lan": [
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/LAN.list",
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt",
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt",
+      "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/private.txt",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/LAN.yaml",
+      "https://ruleset.skk.moe/List/ip/lan.conf",
+      "https://ruleset.skk.moe/List/non_ip/lan.conf"
+    ],
+    "Line": [
+      "v2fly:line",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Line.list",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/SNS/Line.list"
+    ],
+    "Microsoft": [
+      "v2fly:microsoft",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Microsoft.yaml",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Microsoft.list"
+    ],
+    "NGA": [
+      "v2fly:nga"
+    ],
+    "Netflix": [
+      "v2fly:netflix",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetflixIP.list",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Netflix.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Netflix.list",
+      "https://raw.githubusercontent.com/QiuSimons/Netflix_IP/master/getflix.txt"
+    ],
+    "Niconico": [
+      "v2fly:niconico",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Niconico.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Niconico.list"
+    ],
+    "OneDrive": [
+      "v2fly:onedrive",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
+    ],
+    "PayPal": [
+      "v2fly:paypal",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/PayPal.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/PayPal.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/PayPal.list",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/PayPal.yaml",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Paypal.list"
+    ],
+    "PrimeVideo": [
+      "v2fly:primevideo"
+    ],
+    "Proxy": [
+      "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/foreign.list",
+      "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Region/Global.list",
+      "https://ruleset.skk.moe/List/domainset/cdn.conf",
+      "https://ruleset.skk.moe/List/non_ip/apple_services.conf",
+      "https://ruleset.skk.moe/List/non_ip/cdn.conf",
+      "https://ruleset.skk.moe/List/non_ip/global.conf",
+      "https://ruleset.skk.moe/List/non_ip/microsoft.conf"
+    ],
+    "Reddit": [
+      "v2fly:reddit",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Reddit.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Reddit.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Reddit.list"
+    ],
+    "Shopee": [
+      "v2fly:shopee",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Shopee.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Shopee.list"
+    ],
+    "Shopify": [
+      "v2fly:shopify",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Shopify.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Shopify.list"
+    ],
+    "Speedtest": [
+      "v2fly:speedtest",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Speedtest.list",
+      "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Speedtest.yaml",
+      "https://ruleset.skk.moe/List/domainset/speedtest.conf"
+    ],
+    "Spotify": [
+      "v2fly:spotify",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Spotify.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Spotify.list"
+    ],
+    "SteamCN": [
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list"
+    ],
+    "Threads": [
+      "v2fly:threads"
+    ],
+    "TikTok": [
+      "v2fly:tiktok",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/TikTok.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/TikTok.list",
+      "https://raw.githubusercontent.com/Semporia/Quantumult-X/master/Filter/TikTok.list"
+    ],
+    "Twitch": [
+      "v2fly:twitch",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitch.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Twitch.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Twitch.list"
+    ],
+    "Twitter": [
+      "v2fly:twitter",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitter.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Twitter.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Twitter.list",
+      "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/SNS/Twitter.list"
+    ],
+    "Weibo": [
+      "v2fly:sina"
+    ],
+    "Whatsapp": [
+      "v2fly:whatsapp",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Whatsapp.list",
+      "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/App/social/WhatsApp.list"
+    ],
+    "XiaoHongShu": [
+      "v2fly:xiaohongshu"
+    ],
+    "YouTube": [
+      "v2fly:youtube",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list",
+      "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/YouTube.list",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/YouTube.list"
+    ],
+    "Zhihu": [
+      "v2fly:zhihu"
+    ],
+    "eBay": [
+      "v2fly:ebay",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/eBay.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/eBay.list"
+    ],
+    "myTVSUPER": [
+      "v2fly:mytvsuper",
+      "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/MyTVSuper.list"
+    ]
+  },
+  "mail": {
+    "MailCom": [
+      "v2fly:mailcom"
+    ],
+    "Mailru": [
+      "v2fly:mailru",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Mailru.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Mailru.list"
+    ],
+    "Protonmail": [
+      "v2fly:protonmail",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Protonmail.yaml",
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Protonmail.list"
+    ],
+    "SpaceMail": [
+      "v2fly:spacemail"
+    ],
+    "TempMail": [
+      "v2fly:temp-mail"
+    ],
+    "Yahoo": [
+      "v2fly:yahoo"
+    ]
+  }
+}

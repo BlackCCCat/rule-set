@@ -35,6 +35,14 @@ jobs:
             geo/geosite/classical
             geo/geoip/classical
 
+      - name: Checkout "v2fly/domain-list-community"
+        uses: actions/checkout@v7
+        with:
+          repository: "v2fly/domain-list-community"
+          ref: master
+          path: domain-list-community
+          sparse-checkout: data
+
       - name: Checkout "Loyalsoldier/geoip"
         uses: actions/checkout@v7
         with:
@@ -125,36 +133,10 @@ jobs:
         run: |
           source scripts/ruleset_metadata.sh
 
-          surge_lists=('AppleProxy' 'Download' 'OneDrive' 'Microsoft' 'GitHub' 'GitLab' 'Gitee' 'GitBook' 'Amazon' 'eBay' 'Shopee' 'Shopify' 'PayPal' 'Crypto' 'Cryptocurrency' 'SteamCN' 'Game' 'Reddit' 'Discord' 'Whatsapp' 'Line' 'Threads' 'Instagram' 'Facebook' 'Twitter' 'TikTok' 'BiliBili' 'GoogleFCM' 'YouTube' 'Google' 'Spotify' 'Twitch' 'Bahamut' 'HBO' 'Disney' 'PrimeVideo' 'Netflix' 'Hulu' 'Abema' 'DMM' 'Niconico' 'AppleTV' 'DAZN' 'myTVSUPER' 'Speedtest' 'Lan' 'NGA' 'XiaoHongShu' 'Weibo' 'Zhihu' 'DouBan' 'Coolapk' 'DouYin')
-
-          for list in "${surge_lists[@]}"; do
-              python3 scripts/fetch_magicrule_surge.py \
-                  --name "$list" \
-                  --output "download/surge/${list}.list" \
-                  --sources-output "download/surge/${list}.list.sources"
-          done
-
-          surge_game_lists=('GameDownloadCN' 'GameDownload')
-
-          for list in "${surge_game_lists[@]}"; do
-              python3 scripts/fetch_magicrule_surge.py \
-                  --name "$list" \
-                  --output "download/surge/${list}.list" \
-                  --sources-output "download/surge/${list}.list.sources"
-          done
-
-          surge_all_src_names=('Apple' 'Proxy' 'Global')
-          surge_all_dst_names=('Apple' 'GFW' 'Proxy')
-
-          for i in "${!surge_all_dst_names[@]}"; do
-              python3 scripts/fetch_magicrule_surge.py \
-                  --name "${surge_all_src_names[i]}" \
-                  --output "download/surge/${surge_all_dst_names[i]}.list" \
-                  --sources-output "download/surge/${surge_all_dst_names[i]}.list.sources"
-          done
+          python3 scripts/fetch_surge_sources.py domain-list-community/data
 
           files=(
-              'Apple-Proxy.list https://github.com/Elysian-Realme/FuGfConfig/raw/refs/heads/main/ConfigFile/Loon/Apple/no-cn-cdn-domain.list'
+              'GFW-IP.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list'
               'Global.list https://github.com/SukkaW/Surge/raw/refs/heads/master/Source/non_ip/global.conf'
               'AI.list https://github.com/ConnersHua/RuleGo/raw/refs/heads/master/Surge/Ruleset/Extra/AI.list'
               'Adrules.list https://github.com/Cats-Team/AdRules/raw/refs/heads/main/adrules-surge.conf'
@@ -171,6 +153,10 @@ jobs:
               set -- $file
               download_with_sources "$2" "download/surge/$1" || { echo "Download Failed: $1"; exit 1; }
           done
+
+          # The direct Global sources mostly contain domains. Keep the upstream IP rules too.
+          grep -E '^IP-CIDR6?,' download/surge/GFW-IP.list > tmp.list
+          mv tmp.list download/surge/GFW-IP.list
 
           for file in download/surge/*.list; do
               awk '{ gsub(/[[:cntrl:]]/, "", $0) } { gsub(/[^:]\/\/.*/, "", $0) } { gsub(/,\s+/, ",", $0) } /^\s*[#;]/ { next } /^$/ { next } { print $0 } END { print "" }' "$file" > tmp.list && mv tmp.list "${file}"
@@ -274,15 +260,7 @@ jobs:
           done
 
           mail_sources_dir='download/special/mail-sources'
-          mkdir -p "$mail_sources_dir"
           mail_rule_names=('MailCom' 'Mailru' 'Protonmail' 'SpaceMail' 'TempMail' 'Yahoo')
-
-          for list in "${mail_rule_names[@]}"; do
-              python3 scripts/fetch_magicrule_surge.py \
-                  --name "$list" \
-                  --output "$mail_sources_dir/${list}.list" \
-                  --sources-output "$mail_sources_dir/${list}.list.sources"
-          done
 
           mail_source_files=('download/surge/Google.list' 'download/surge/Microsoft.list')
           for list in "${mail_rule_names[@]}"; do
@@ -412,12 +390,11 @@ jobs:
           source scripts/ruleset_metadata.sh
           cat 'custom/apple-intelligence.list' \
               'download/meta/apple-intelligence.list' \
-              'download/surge/Apple-Proxy.list' \
               'download/surge/AppleProxy.list' \
           > meta/apple-proxy.list
           merge_sources 'meta/apple-proxy.list' \
               'custom/apple-intelligence.list' 'download/meta/apple-intelligence.list' \
-              'download/surge/Apple-Proxy.list' 'download/surge/AppleProxy.list'
+              'download/surge/AppleProxy.list'
 
       - name: Merge apple-cn file
         run: |
@@ -622,13 +599,8 @@ jobs:
               'meta/tiktok.list' \
           > 'meta/media.list'
           merge_sources 'meta/media.list' \
-              'download/meta/youtube.list' 'download/surge/YouTube.list' \
-              'download/meta/netflix.list' 'download/surge/Netflix.list' \
-              'download/meta/disney.list' 'download/surge/Disney.list' \
-              'download/meta/primevideo.list' 'download/surge/PrimeVideo.list' \
-              'download/meta/hbo.list' 'download/surge/HBO.list' \
-              'download/meta/twitch.list' 'download/surge/Twitch.list' \
-              'download/meta/tiktok.list' 'download/surge/TikTok.list'
+              'meta/youtube.list' 'meta/netflix.list' 'meta/disney.list' \
+              'meta/primevideo.list' 'meta/hbo.list' 'meta/twitch.list' 'meta/tiktok.list'
 
           cat 'download/meta/telegram.list' \
               'download/special/telegram-rules.list' \
@@ -673,10 +645,11 @@ jobs:
           cat 'download/meta/category-anticensorship.list' \
               'download/meta/gfw.list' \
               'download/surge/GFW.list' \
+              'download/surge/GFW-IP.list' \
           > meta/gfw.list
           merge_sources 'meta/gfw.list' \
               'download/meta/category-anticensorship.list' 'download/meta/gfw.list' \
-              'download/surge/GFW.list'
+              'download/surge/GFW.list' 'download/surge/GFW-IP.list'
 
       - name: Merge proxy file
         run: |
